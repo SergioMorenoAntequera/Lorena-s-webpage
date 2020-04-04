@@ -2,7 +2,7 @@
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Thin.ttf');  
 }
-body {
+html, body {
     scroll-behavior: smooth;
     min-height: 100%;
     margin: 0px;
