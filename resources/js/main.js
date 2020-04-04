@@ -4,11 +4,17 @@
 $(document).ready(function(e){
     let lastScrollTop = 0;
     let boxes = $("#content");
+    
     let initialTop = parseInt(boxes.css("top").replace("px", ""));
     let speed = 7;
+
+    boxes.css({"top": $("#main").height()});
+    console.log($("#main").height());
+
     $(window).scroll(function(e){
         let st = $(this).scrollTop();
-
+        console.log(e);
+        
         if (st > lastScrollTop){
             move(speed);
         } else {
