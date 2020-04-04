@@ -1,4 +1,43 @@
 
+// Change index bg image
+$(document).ready(function(e){
+    let body = $("body")
+    let imagesURL = "resources/img/"
+    let images = ["main1.jpeg", 
+        "main2.jpeg",
+        "main3.jpeg"
+    ];
+    let index = 0;
+    let changeBG = function(){
+        console.log(index);
+        body.css({"background-image": "url("+ imagesURL + images[index] +")"});
+        if(++index >= images.length)
+            index = 0;
+        setTimeout(changeBG, 3000);
+    }
+    changeBG();
+
+});
+
+// Hover on blackboxes
+$(document).ready(function(e){
+    
+    $(".boxAndText").hover(function(e){
+        bb = $(this).find(".blackBox");
+
+        bb.css({
+            opacity: 0.2,
+        });
+
+    }, function(e){
+
+        bb.css({
+            opacity: 0.5,
+        });
+    });
+});
+
+
 
 // SCROLLING EFFECT FOR BOXES
 // $(document).ready(function(e){
@@ -36,20 +75,4 @@
 //     };
 // });
 
-// Hover on blackboxes
-$(document).ready(function(e){
-    
-    $(".boxAndText").hover(function(e){
-        bb = $(this).find(".blackBox");
 
-        bb.css({
-            opacity: 0.2,
-        });
-
-    }, function(e){
-
-        bb.css({
-            opacity: 0.5,
-        });
-    });
-});

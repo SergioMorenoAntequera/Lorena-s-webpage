@@ -2,20 +2,22 @@
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Thin.ttf');  
 }
-html, body {
+body {
     scroll-behavior: smooth;
-    height: 100%;
+    min-height: 100%;
     margin: 0px;
     font-family: "Roboto";
     color: white;
     /* overflow: hidden; */
 
     
-    background: url("../img/main.jpeg") no-repeat center center fixed; 
+    background: url("../img/main1.jpeg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-color: black;
+    transition: 2s;
 
     /* background-image: url("../img/main.jpeg");
     background-repeat: no-repeat;
@@ -120,7 +122,6 @@ html, body {
 }
 
 
-
 /****************************************************/
 /********************** ABOUT ME ********************/
 /****************************************************/
@@ -130,12 +131,12 @@ html, body {
 /********************** FOOTER **********************/
 /****************************************************/
 footer {
-    height: 100px;
+    height: auto;
     padding: 20px 40px;
     margin-top: 50px;
     background-color: #3f3f3f;
 }
-footer a {
-    text-decoration: none;
-    
-}
+footer a { text-decoration: none; }
+footer #loreInfo { float: left; font-weight: bold; }
+footer #sergioInfo {font-size: 10px; float: right; text-align: right;}
+

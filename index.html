@@ -22,10 +22,10 @@
     <div id="content">
         
         <div id="gallery">
-            <div class="row m-0 bg-danger">
+            <div class="row m-0">
                 <!-- First big picture -->
                 <div class="col-8 p-0">
-                    <div class="container-fluid h-100 p-0">
+                    <div class="img-hover-zoom container-fluid h-100 p-0">
                         <div class="boxAndText">
                             <div class="blackBox"></div>
                             <h3 class="centerHV absolute"> Galería </h3>
@@ -35,10 +35,10 @@
                 </div>
     
                 <!-- Small images -->
-                <div class="col-4 p-0 bg-danger">
+                <div class="col-4 p-0 ">
     
                     <!-- top img -->
-                    <div class="row m-0 relative h-50 bg-primary">
+                    <div class="row m-0 relative h-50">
                         <div class="boxAndText">
                             <div class="blackBox"></div>
                             <h3 class="centerHV absolute"> Trabajos </h3>
@@ -47,11 +47,13 @@
                     </div>
     
                     <!-- bottom img -->
-                    <div class="row m-0 relative h-50 bg-secondary">
-                        <div class="boxAndText">
-                            <div class="blackBox"></div>
-                            <h3 class="centerHV absolute"> Contacto </h3>
-                        </div>
+                    <div class="row m-0 relative h-50">
+                        <a class="text-decoration-none text-reset" href="#contactBottom">
+                            <div class="boxAndText">
+                                <div class="blackBox"></div>
+                                <h3 class="centerHV absolute"> Contacto </h3>
+                            </div>
+                        </a>
                         <img class="forced" src="resources/img/45306017_1351131238362552_4486154271829990823_n.jpg" alt="">
                     </div>
                 </div>
@@ -79,12 +81,24 @@
             </div>
         </div>
         
-        <footer class="section">
-            <b id="contactBottom">
-                <a class="text-reset" href=""> loremorean@gmail.com </a> <span class="mx-3"> | </span>
+        <footer id="contactBottom" class="section">
+            <div id="loreInfo">
+                <a class="text-reset" href="mailto:loremorean@gmail.com"> loremorean@gmail.com </a> <span class="mx-3"> | </span>
                 <a class="text-reset" href="https://www.instagram.com/loremorean"> Instagram </a> <span class="mx-3"> | </span>
                 <a class="text-reset" href="https://www.facebook.com/lorena.morenoantequera"> Facebook </a> 
-            </b>
+            </div>
+            
+            <div id="sergioInfo">
+                <a class="text-reset" href="https://github.com/SergioMorenoAntequera"> 
+                    Página realizada por Sergio Moreno Antequera(Seran) 
+                </a>
+                <span class="mx-1"> | </span>
+                <a class="text-reset" href="mailto:seranmoreno500@gmail.com"> 
+                    Email 
+                </a>
+                <br>
+                © Copyright 2001-2020 Copyright.es - Todos los Derechos Reservados
+            </div>
         </footer>
     </div>
 
