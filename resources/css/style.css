@@ -147,6 +147,8 @@ a{
 #jobs {padding-top: 200px; padding-bottom: 200px;}
 #jobs .list h2{ margin-bottom: 20px;}
 #jobs .list .subtitle{ color: #9e9e9e;}
+#videoModal .modal-dialog .modal-content {background-color: black;}
+#videoModal .modal-lg { max-height: 70% !important; }
 
 
 /****************************************************/
