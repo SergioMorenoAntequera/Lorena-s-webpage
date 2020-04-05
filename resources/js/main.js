@@ -1,7 +1,7 @@
 
 // Change index bg image
 $(document).ready(function(e){
-    let body = $("body")
+    let body = $("#main")
     let imagesURL = "resources/img/"
     let images = ["main1.jpeg", 
         "main2.jpeg",

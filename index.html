@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="main">
+        <!-- Fondo que va cambiando -->
 
         <div id="name" class="absolute">
             <h1 class="namePart ml-2" id="lorena"> Lorena </h1>
@@ -16,7 +17,6 @@
             <h1 class="namePart ml-2" id="antequera"> Antequera </h1>
             <h3> Bailarina </h3>
         </div>
-        
     </div>
 
     <div id="content">
@@ -78,34 +78,48 @@
                     <b><h1 class="display-4">  Carrera profesional  </h1></b>
                 </div>
                 <div class="col-12 col-md-6 text-left list">
-                    <h2>• Aaron Vivancos 4ALL 2019-2020. </h2>
-                    
-                    <h2 class="mb-0">• "Raigambre" de Juanma Prieto.</h2>
-                    <span class="subtitle"> Obra premiada en el XXIII Certamen Coreográfico de Danza Española y Flamenco.</span>
-
-                    <h2 style="margin-top: 20px;">• "Inercia" por Teresa Nieto y Daniel Doña. </h2>
-                    <h2>• "La Rama" por Carlos Chamorro. </h2>
-                    <h2>• "El Bosque Originario" por Manuel Segovia. </h2>
+                    <h2>
+                       <a class="link text-reset text-decoration-none" href="" data-toggle="modal" data-target="#videoModal"> 
+                        • Aaron Vivancos 4ALL 2019-2020. 
+                        </a> 
+                    </h2>
+                    <h2 class="mb-0">
+                        <a class="link text-reset text-decoration-none" href="https://www.youtube.com/watch?v=pU2bliPCFvk"> 
+                            • "Raigambre" de Juanma Prieto.
+                        </a>
+                    </h2>
+                    <span class="subtitle"> 
+                        Obra premiada en el XXIII Certamen Coreográfico de Danza Española y Flamenco.
+                    </span>
+                    <h2 style="margin-top: 20px;">
+                        • "Inercia" por Teresa Nieto y Daniel Doña. 
+                    </h2>
+                    <h2>
+                        • "La Rama" por Carlos Chamorro. 
+                    </h2>
+                    <h2>
+                        • "El Bosque Originario" por Manuel Segovia. 
+                    </h2>
                 </div>
+                <!-- Modal videos -->
+                <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        ...
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
-
-        <!-- <div id="jobs">
-            <div class="container w-100 w-md-50 text-center mt-5">
-                
-                <div class="row">
-                    <div class="col-4 mt-4 p-5 bg-primary">
-                        Docente
-                    </div>
-                    <div class="col-4 p-5 bg-secondary">
-                        Bailarina
-                    </div>
-                    <div class="col-4 mt-4 p-5 bg-primary">
-                        Gestora cultural
-                    </div>
-                </div>
-            </div>
-        </div> -->
         
         <footer id="contactBottom" class="section">
             <div id="loreInfo">

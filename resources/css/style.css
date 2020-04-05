@@ -10,21 +10,10 @@ html, body {
     color: white;
     /* overflow: hidden; */
 
-    
-    background: url("../img/main1.jpeg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-color: black;
-    transition: 2s;
-
     /* background-image: url("../img/main.jpeg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: black; */
-
-    
 }
 
 /****************************************************/
@@ -73,13 +62,44 @@ html, body {
                                     supported by Chrome, Opera and Firefox */
 }
 
+/* Barra de debajo del enlace  */
+a{
+    text-decoration: none;
+    color: white;
+}
+.link{
+    position: relative;
+}
+.link:after{
+    content: '';
+    position: absolute;
+    width: 0; height: 3px;
+    display: block;
+    margin-top: -2px;
+    right: 0;
+    background: white;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+}
+.link:hover:after{
+    width: 100%;
+    left: 0;
+    background: white;
+}
+
 /****************************************************/
 /********************** MAIN PART *******************/
 /****************************************************/
 #main {
-
     height: 700px;
     color: white;
+    background: url("../img/main1.jpeg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: black;
+    transition: 2s;
 }
 #main #name {
     top: 5%;
@@ -101,7 +121,6 @@ html, body {
 /********************** CONTENT *********************/
 /****************************************************/
 #content {
-    position: absolute;
     background-color: black;
 }
 
@@ -125,7 +144,7 @@ html, body {
 /****************************************************/
 /********************** JOBS ************************/
 /****************************************************/
-#jobs {max-height: 100%; padding-top: 200px; padding-bottom: 200px;}
+#jobs {padding-top: 200px; padding-bottom: 200px;}
 #jobs .list h2{ margin-bottom: 20px;}
 #jobs .list .subtitle{ color: #9e9e9e;}
 
