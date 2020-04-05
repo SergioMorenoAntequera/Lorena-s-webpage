@@ -9,7 +9,7 @@ $(document).ready(function(e){
     ];
     let index = 0;
     let changeBG = function(){
-        console.log(index);
+        // console.log(index);
         body.css({"background-image": "url("+ imagesURL + images[index] +")"});
         if(++index >= images.length)
             index = 0;
@@ -34,6 +34,16 @@ $(document).ready(function(e){
         bb.css({
             opacity: 0.5,
         });
+    });
+});
+
+//Change modal video in jobsList
+$(document).ready(function(e){
+    let jobsModal = $("#jobsModal");
+    $(".oneJob.withVideo").click(function(e){
+        let videoUrl = $(this).attr("src");
+        videoUrl = videoUrl.replace("watch?v=", "embed/");
+        $("#jobsVideo").attr("src", videoUrl);
     });
 });
 
