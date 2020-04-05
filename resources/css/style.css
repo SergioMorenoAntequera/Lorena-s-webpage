@@ -164,7 +164,23 @@ a:hover{ text-decoration: none;}
 /****************************************************/
 /******************** FORMATION *********************/
 /****************************************************/
-#formation .images img {opacity: 0.5;}
+#formation .banner{
+    height: 250px;
+    overflow:hidden;
+    position: relative;
+}
+#formation .banner img {
+    transform: translate(0%, -30%);
+    opacity: 0.5;
+}
+#formation .images h3 {
+    font-weight: bold;
+    opacity: 1;
+}
+#formation .images img {
+    opacity: 0.6;
+    cursor: pointer;
+}
 
 /****************************************************/
 /********************** FOOTER **********************/
