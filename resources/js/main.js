@@ -40,11 +40,23 @@ $(document).ready(function(e){
 //Change modal video in jobsList
 $(document).ready(function(e){
     let jobsModal = $("#jobsModal");
+    //Poner el video
     $(".oneJob.withVideo").click(function(e){
         let videoUrl = $(this).attr("src");
         videoUrl = videoUrl.replace("watch?v=", "embed/");
         $("#jobsVideo").attr("src", videoUrl);
     });
+
+    //Parar el video al cerrar
+    $('#jobsModal .close').on('click', function (e) {
+        $("#jobsVideo").attr("src", "");
+    });
+    $('#jobsModal').on('click', function (e) {
+        e.stopPropagation();
+        $("#jobsVideo").attr("src", "");
+    });
+    
+
 });
 
 
