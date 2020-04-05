@@ -20,7 +20,9 @@ html, body {
 /********************** BASICS **********************/
 /****************************************************/
 /* Sections */
-
+.section {
+    width: 100%;
+}
 
 /* Positioning */
 .absolute {
@@ -49,6 +51,10 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
+.XXLmt {margin-top: 200px !important;}
+.XXLmb {margin-bottom: 200px !important;}
+
+
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
@@ -60,15 +66,9 @@ html, body {
 }
 
 /* Barra de debajo del enlace  */
-a{
-    text-decoration: none;
-    color: white;
-}
+a{ text-decoration: none; color: white; }
 a:hover{ text-decoration: none;}
-.link{
-    position: relative;
-    
-}
+.link{ position: relative; }
 .link:after{
     content: '';
     position: absolute;
@@ -84,7 +84,16 @@ a:hover{ text-decoration: none;}
     width: 100%;
     left: 0;
     background: white;
+
+
 }
+
+.squared {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #68040d;
+}
+.bg-dark {background-color: black !important;}
 
 /****************************************************/
 /********************** MAIN PART *******************/
@@ -146,13 +155,16 @@ a:hover{ text-decoration: none;}
 #jobs {min-height: 100%; padding-top: 200px; padding-bottom: 200px;}
 #jobs .jobsList h2{ margin-bottom: 20px;}
 #jobs .jobsList .subtitle{ color: #9e9e9e;}
-#jobs .XXLmt {margin-top: 200px;}
-#jobs .XXLmb {margin-bottom: 200px;}
 #jobs .gestora a { font-weight: bold; }
 #jobsModal .modal-dialog .modal-content {background-color: black;}
 #jobsModal .modal-dialog .modal-content .close {position: absolute; z-index: 2; color: white; right: -50px; font-size: 50px;}
 #jobsModal .modal-lg { max-height: 70% !important; }
 
+
+/****************************************************/
+/******************** FORMATION *********************/
+/****************************************************/
+#formation .images img {opacity: 0.5;}
 
 /****************************************************/
 /********************** FOOTER **********************/
