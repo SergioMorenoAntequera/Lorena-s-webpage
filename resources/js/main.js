@@ -2,10 +2,11 @@
 // Change index bg image
 $(document).ready(function(e){
     let body = $("#main")
-    let imagesURL = "resources/img/"
+    let imagesURL = "resources/img/main/"
     let images = ["main1.jpeg", 
         "main2.jpeg",
-        "main3.jpeg"
+        "main3.jpeg",
+        "main4.jpeg"
     ];
     let index = 0;
     let changeBG = function(){
@@ -57,6 +58,36 @@ $(document).ready(function(e){
     });
     
 
+});
+
+//FADEINTOP
+$(document).ready(function(e){
+    let initialScroll = $(this).scrollTop();
+    //So we only get the effect when we open it and not in refresh
+    var elements = $(".fadeInTop"); 
+
+    // To show the elements that we have already gone through
+    elements.each(function(e) {
+        if($(this).offset().top - screen.height*80/100 < initialScroll){
+            $(this).css({
+                opacity: 1,
+                top: "0px",
+            });
+        }
+    });
+
+    // To show new emenelt as you scroll down
+    $(window).scroll(function(e){
+        let st = $(this).scrollTop();
+        elements.each(function(e) {
+            if(st > $(this).offset().top - screen.height*80/100){
+                $(this).animate({
+                    opacity: 1,
+                    top: "0px",
+                }, 300);
+            }
+        });
+    });
 });
 
 // TO GO UP

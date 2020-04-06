@@ -2,6 +2,10 @@
     font-family: 'Roboto';
     src: url('../fonts/Roboto-Thin.ttf');  
 }
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Thin.ttf');  
+}
 html, body {
     scroll-behavior: smooth;
     min-height: 100%;
@@ -99,7 +103,7 @@ a:hover{ text-decoration: none;}
 /********************** MAIN PART *******************/
 /****************************************************/
 #main {
-    height: 700px;
+    height: 100vh;
     color: white;
     background: url("../img/main1.jpeg") no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -211,3 +215,11 @@ footer a { text-decoration: none; }
 footer #loreInfo { float: left; font-weight: bold; }
 footer #sergioInfo {font-size: 10px; float: right; text-align: right;}
 
+/****************************************************/
+/********************** FOOTER **********************/
+/****************************************************/
+.fadeInTop {
+    position: relative;
+    top: 50px;
+    opacity: 0;
+}
