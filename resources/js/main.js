@@ -69,10 +69,7 @@ $(document).ready(function(e){
     // To show the elements that we have already gone through
     elements.each(function(e) {
         if($(this).offset().top - screen.height*80/100 < initialScroll){
-            $(this).css({
-                opacity: 1,
-                top: "0px",
-            });
+            resetPosition($(this));
         }
     });
 
@@ -88,6 +85,16 @@ $(document).ready(function(e){
             }
         });
     });
+
+    function resetPosition(element){
+        element.css({
+            opacity: 1,
+            top: "0px",
+            left: "0px",
+            right: "0px",
+            bottom: "0px",
+        });
+    }
 });
 
 // TO GO UP
