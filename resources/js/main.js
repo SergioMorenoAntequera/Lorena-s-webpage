@@ -94,7 +94,6 @@ $(document).ready(function(e){
 $(document).ready(function(e){
     $("#goUp").click(function(e){
         window.scrollTo(0, 0); 
-        
     });
 
     $(window).scroll(function(e){
@@ -105,7 +104,6 @@ $(document).ready(function(e){
         if(st == 0){
             $("#goUp").fadeOut(300);
         }
-        
     });
 });
 

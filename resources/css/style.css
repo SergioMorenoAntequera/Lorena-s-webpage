@@ -206,14 +206,14 @@ a:hover{ text-decoration: none;}
 /********************** FOOTER **********************/
 /****************************************************/
 footer {
-    height: 80px;
+    min-height: 80px;
     padding: 20px 40px;
     margin-top: 50px;
     background-color: #3f3f3f;
 }
 footer a { text-decoration: none; }
 footer #loreInfo { float: left; font-weight: bold; }
-footer #sergioInfo {font-size: 10px; float: right; text-align: right;}
+footer #sergioInfo {position: relative;  right: 30px; font-size: 10px; text-align: right;}
 
 /****************************************************/
 /********************** FOOTER **********************/
