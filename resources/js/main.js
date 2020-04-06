@@ -59,6 +59,25 @@ $(document).ready(function(e){
 
 });
 
+// TO GO UP
+$(document).ready(function(e){
+    $("#goUp").click(function(e){
+        window.scrollTo(0, 0); 
+        
+    });
+
+    $(window).scroll(function(e){
+        let st = $(this).scrollTop();
+        if($("#goUp").css("display") == "none" && st > 0) {
+            $("#goUp").fadeIn(300);
+        }
+        if(st == 0){
+            $("#goUp").fadeOut(300);
+        }
+        
+    });
+});
+
 
 
 // SCROLLING EFFECT FOR BOXES
