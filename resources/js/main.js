@@ -60,16 +60,16 @@ $(document).ready(function(e){
 
 });
 
-//FADEINTOP
+//fadeInFromBottom
 $(document).ready(function(e){
     let initialScroll = $(this).scrollTop();
-    //So we only get the effect when we open it and not in refresh
-    var elements = $(".fadeInTop"); 
+    var elements = $(".fadeInFromBottom"); 
 
     // To show the elements that we have already gone through
+    // so we only get the effect when we open it and not in refresh
     elements.each(function(e) {
         if($(this).offset().top - screen.height*80/100 < initialScroll){
-            resetPosition($(this));
+            instantShow($(this));
         }
     });
 
@@ -78,15 +78,12 @@ $(document).ready(function(e){
         let st = $(this).scrollTop();
         elements.each(function(e) {
             if(st > $(this).offset().top - screen.height*80/100){
-                $(this).animate({
-                    opacity: 1,
-                    top: "0px",
-                }, 300);
+                fadeInFromBottom($(this));
             }
         });
     });
 
-    function resetPosition(element){
+    function instantShow(element){
         element.css({
             opacity: 1,
             top: "0px",
@@ -95,6 +92,13 @@ $(document).ready(function(e){
             bottom: "0px",
         });
     }
+    function fadeInFromBottom(element) {
+        element.animate({
+            opacity: 1,
+            top: "0px",
+        }, 300);
+    }
+    
 });
 
 // TO GO UP

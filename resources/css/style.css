@@ -227,7 +227,7 @@ footer #sergioInfo {position: relative;  right: 30px; font-size: 10px; text-alig
 /****************************************************/
 /***************** FUNCTIONALITIES ******************/
 /****************************************************/
-.fadeInTop {
+.fadeInFromBottom {
     position: relative;
     top: 50px;
     opacity: 0;
