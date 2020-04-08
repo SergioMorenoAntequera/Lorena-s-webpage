@@ -69,8 +69,8 @@
         console.log(gallery)
     </script>
 
-    
+    <p> Galería a espera de desarrollo </p>
+    <p> Por ahora solo se han obtenido los datos de un directorio del servidor para conseguir las fotos</p>
 
-    
 </body>
 </html>

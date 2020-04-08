@@ -131,14 +131,16 @@ $(document).ready(function(e){
 
     function placeMagicBox(element){
         let position = element.position();
-        left = position.left + parseInt(element.css('marginLeft'), 10);
-        top = position.top + parseInt(element.css('marginTop'), 10);
+        let width = element.width() + parseInt(element.css("paddingLeft")) + parseInt(element.css("paddingRight"));
+        
+        left = position.left + parseInt(element.css('marginLeft'));
+        top = position.top + parseInt(element.css('marginTop'));
         
         let magicBox = element.prev();
         magicBox.css({
             top:top, 
-            left:left - 20,
-            width:element.width() + 40,
+            left:left,
+            width:width,
         });
     }
 
