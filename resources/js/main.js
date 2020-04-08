@@ -1,4 +1,5 @@
 
+
 // Change index bg image
 $(document).ready(function(e){
     let body = $("#main")
@@ -8,7 +9,7 @@ $(document).ready(function(e){
         "main3.jpeg",
         "main4.jpeg"
     ];
-    let index = 0;
+    let index = 1;
     let changeBG = function(){
         // console.log(index);
         body.css({"background-image": "url("+ imagesURL + images[index] +")"});
@@ -16,8 +17,7 @@ $(document).ready(function(e){
             index = 0;
         setTimeout(changeBG, 3000);
     }
-    changeBG();
-
+    setTimeout(changeBG, 3000);
 });
 
 // Hover on blackboxes
@@ -69,7 +69,7 @@ $(document).ready(function(e){
     // so we only get the effect when we open it and not in refresh
     elements.each(function(e) {
         if($(this).offset().top - screen.height*80/100 < initialScroll){
-            instantShow($(this));
+            fadeInFromBottom($(this));
         }
     });
 
@@ -101,6 +101,66 @@ $(document).ready(function(e){
     
 });
 
+//AppearingFromBox // .appearingFromBox
+$(document).ready(function(e){
+    let initialScroll = $(this).scrollTop();
+    let elements = $(".appearingFromBox");
+    $( "<div class='magicBox'></div>").insertBefore(elements);
+    
+    elements.each(function(e){
+        placeMagicBox($(this)); 
+    });
+
+    elements.each(function(e){
+        if($(this).offset().top - screen.height*80/100 < initialScroll){
+            magicBoxAnimation($(this));
+        }
+    });
+    
+
+    // To show new emenelt as you scroll down
+    $(window).scroll(function(e){
+        let st = $(this).scrollTop();
+        elements.each(function(e) {
+            if(st > $(this).offset().top - screen.height*80/100){
+                if($(this).prev().css("display") == "none")
+                    magicBoxAnimation($(this));
+            }
+        });
+    });
+
+    function placeMagicBox(element){
+        let position = element.position();
+        left = position.left + parseInt(element.css('marginLeft'), 10);
+        top = position.top + parseInt(element.css('marginTop'), 10);
+        
+        let magicBox = element.prev();
+        magicBox.css({
+            top:top, 
+            left:left - 20,
+            width:element.width() + 40,
+        });
+    }
+
+    function magicBoxAnimation(element){
+        let box = element.prev();
+        box.css({display:"block"});
+        box.animate({
+            height: element.height()
+        },400, function(){
+            element.animate({
+                opacity: 1
+            }, 1, function(){
+                box.animate({
+                    top: "+=" + element.height(),
+                    height: "0px",
+                }, 400);
+            });
+        });
+    }
+
+});
+
 // TO GO UP
 $(document).ready(function(e){
     $("#goUp").click(function(e){
@@ -117,7 +177,6 @@ $(document).ready(function(e){
         }
     });
 });
-
 
 
 // SCROLLING EFFECT FOR BOXES
