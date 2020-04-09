@@ -84,20 +84,18 @@
                 Inta / Facebook
             </div>
         </header>
-        <div class="body imgsGallery row bg-primary align-items-center justify-content-center">
-            <div class="col-1 bg-danger">
-                pra
+
+        <div class="body row bg-primary align-items-center justify-content-center ">
+            <div class="col-auto bg-danger">
+                PREVIOUS
             </div>
-            <div class="col-8 bg-warning h-100">
-                <div class="img-container">
+            <div class="imgsGallery col-8 bg-warning h-100">
+                <!-- <div class="img-container">
                     <img class="imgGallery" src="resources/img/formation/formation1.jpg" alt="">
-                </div>
-                <div class="img-container">
-                    <img class="imgGallery" src="resources/img/formation/formation2.jpg" alt="">
-                </div>
+                </div> -->
             </div>
-            <div class="col-1 bg-danger">
-                pra
+            <div class="col-auto bg-danger">
+                NEXT
             </div>
             
         </div>
@@ -109,12 +107,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- JQuey -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"> </script>
+    <script> 
+        var gallery = <?php echo $galleryJSON ?>;
+    </script>
     <script src="resources/js/main.js"></script>
     <script src="resources/js/gallery.js"></script>
-    <script> 
-        var gallery = <?php echo $galleryJSON ?>; 
-        console.log(gallery)
-    </script>
 
 </body>
 </html>

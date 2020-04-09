@@ -68,7 +68,7 @@ $(document).ready(function(e){
     // so we only get the effect when we open it and not in refresh
     elements.each(function(e) {
         if($(this).offset().top - screen.height*80/100 < initialScroll){
-            fadeInFromBottom($(this));
+            fadeInFromBottom($(this), 300);
         }
     });
 
@@ -77,27 +77,17 @@ $(document).ready(function(e){
         let st = $(this).scrollTop();
         elements.each(function(e) {
             if(st > $(this).offset().top - screen.height*80/100){
-                fadeInFromBottom($(this));
+                fadeInFromBottom($(this), 300);
             }
         });
     });
 
-    function instantShow(element){
-        element.css({
-            opacity: 1,
-            top: "0px",
-            left: "0px",
-            right: "0px",
-            bottom: "0px",
-        });
-    }
-    function fadeInFromBottom(element) {
+    function fadeInFromBottom(element, speed) {
         element.animate({
             opacity: 1,
             top: "0px",
-        }, 300);
+        }, speed);
     }
-    
 });
 
 //AppearingFromBox // .appearingFromBox
@@ -179,6 +169,7 @@ $(document).ready(function(e){
         }
     });
 });
+
 
 
 // SCROLLING EFFECT FOR BOXES
