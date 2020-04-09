@@ -116,6 +116,7 @@ $(document).ready(function(e){
             magicBoxAnimation($(this));
         }
     });
+
     
 
     // To show new emenelt as you scroll down
@@ -133,9 +134,9 @@ $(document).ready(function(e){
         let position = element.position();
         let width = element.width() + parseInt(element.css("paddingLeft")) + parseInt(element.css("paddingRight"));
         
-        left = position.left + parseInt(element.css('marginLeft'));
-        top = position.top + parseInt(element.css('marginTop'));
-        
+        let left = position.left + parseInt(element.css('marginLeft'));
+        let top = position.top + parseInt(element.css('marginTop'));
+
         let magicBox = element.prev();
         magicBox.css({
             top:top, 
