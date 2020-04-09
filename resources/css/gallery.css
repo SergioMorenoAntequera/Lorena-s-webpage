@@ -1,0 +1,33 @@
+#galleryMain {
+    height: 100vh;
+}
+/***********************************************/
+/******************** HEADER *******************/
+/***********************************************/
+
+
+#galleryMain .header {
+    height: 10%;
+}
+
+/*********************************************/
+/****************** GALLERY ******************/
+/*********************************************/
+
+#galleryMain .body {
+    height: 90%;
+}
+#galleryMain .body .img-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 70%;
+}
+#galleryMain .body .img-container img{
+    height: 100%;
+}
+
+

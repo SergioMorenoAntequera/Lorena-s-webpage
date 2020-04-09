@@ -40,7 +40,6 @@ $(document).ready(function(e){
 
 //Change modal video in jobsList
 $(document).ready(function(e){
-    let jobsModal = $("#jobsModal");
     //Poner el video
     $(".oneJob.withVideo").click(function(e){
         let videoUrl = $(this).attr("src");
