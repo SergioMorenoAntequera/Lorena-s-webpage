@@ -85,19 +85,25 @@
             </div>
         </header>
 
-        <div class="body row bg-primary align-items-center justify-content-center ">
-            <div class="col-auto bg-danger">
-                PREVIOUS
+        <div class="body row bg-primary text-center justify-content-center ">
+            <div class="col-12 bg-success h-75">
+                <div class="row align-items-center h-100">
+                    <div class="col-6 order-2 col-md-2 order-md-1  bg-danger">
+                        PREVIOUS
+                    </div>
+                    <div class="imgsGallery col-12 order-1 col-md-8 bg-warning h-100">
+                        <!-- <div class="img-container">
+                            <img class="imgGallery" src="resources/img/formation/formation1.jpg" alt="">
+                        </div> -->
+                    </div>
+                    <div class="col-6 order-3 col-md-2 order-md-3 bg-danger">
+                        NEXT <br> asdasda
+                    </div>
+                    <div class="col-12 order-4 bg-dark h-25">
+                        <h1> Titulo de la coleccion </h1>
+                    </div>
+                </div>
             </div>
-            <div class="imgsGallery col-8 bg-warning h-100">
-                <!-- <div class="img-container">
-                    <img class="imgGallery" src="resources/img/formation/formation1.jpg" alt="">
-                </div> -->
-            </div>
-            <div class="col-auto bg-danger">
-                NEXT
-            </div>
-            
         </div>
     </div>
 
@@ -107,11 +113,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- JQuey -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"> </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script> 
         var gallery = <?php echo $galleryJSON ?>;
     </script>
     <script src="resources/js/main.js"></script>
     <script src="resources/js/gallery.js"></script>
-
 </body>
 </html>

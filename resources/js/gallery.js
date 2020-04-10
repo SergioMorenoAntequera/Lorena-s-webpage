@@ -17,12 +17,13 @@ $.fn.fadeAndSlide = function(duration, direction, distance) {
     $(this).css({
         opacity: 0,
     });
-    
+
     $(this).animate({
         opacity: "1",
         
 
     }, duration);
+    
 
     // var args = $.speed(duration, easing, complete);
     // var step = args.step;
@@ -44,18 +45,21 @@ var imgsGallery = $(".imgsGallery");
 // Placing the images in the center and rotating them
 $(document).ready(function(e){
 
-    
-
     // Adding the images from the directory
     gallery.forEach(session => {
         imgsGallery.append("<div class='img-container'> <img class='imgGallery ' src='resources/img/gallery/"+ session.name +"/"+ session.imgs[0] +"' alt=''> </div>");
     });
     
     // Rotating them
-    let rotationDirection = true;
+    let rotationDirection;
+    if(parseInt(Math.random()*10) >= 5 ? rotationDirection = true : rotationDirection = false);
+
     let imgsInGallery = $(".imgGallery");
     imgsInGallery.each(function(e){
-        rotateImg($(this))
+        // $(this).hide().show("slide", );
+        $(this).show("drop", { direction: "up", distance:50 }, 1000, function(){
+            rotateImg($(this));
+        });
     });
 
     function rotateImg(element){
