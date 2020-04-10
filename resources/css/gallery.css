@@ -28,7 +28,7 @@ html, body{
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    height: 70%;
+    height: 90%;
 }
 #galleryMain .body .img-container img{
     height: 100%;

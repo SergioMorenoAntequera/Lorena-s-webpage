@@ -85,20 +85,21 @@
             </div>
         </header>
 
-        <div class="body row bg-primary text-center justify-content-center ">
-            <div class="col-12 bg-success h-75">
-                <div class="row align-items-center h-100">
-                    <div class="col-6 order-2 col-md-2 order-md-1  bg-danger">
-                        PREVIOUS
+        <div class="body row bg-primary text-center justify-content-center">
+            <div class="col-12 bg-success h-100">
+                <div class="row align-items-center justify-content-center h-100">
+                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right bg-danger">
+                        <button id="galleryPrev"> PREVIOUS </button>
                     </div>
-                    <div class="imgsGallery col-12 order-1 col-md-8 bg-warning h-100">
+                    <div class="imgsGallery col-12 order-1 col-md-5 bg-warning h-75">
                         <!-- <div class="img-container">
                             <img class="imgGallery" src="resources/img/formation/formation1.jpg" alt="">
                         </div> -->
                     </div>
-                    <div class="col-6 order-3 col-md-2 order-md-3 bg-danger">
-                        NEXT <br> asdasda
+                    <div class="col-6 order-3 col-md-2 order-md-3 text-md-left bg-danger">
+                        <button id="galleryNext"> NEXT </button> 
                     </div>
+
                     <div class="col-12 order-4 bg-dark h-25">
                         <h1> Titulo de la coleccion </h1>
                     </div>
