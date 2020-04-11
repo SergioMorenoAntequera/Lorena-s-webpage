@@ -1,6 +1,6 @@
 //  Codigo nav
 $(document).ready(function(){
-	$('#nav-icon').click(function(){
+	$('.nav-icon').click(function(){
 		$(this).toggleClass('open');
 	});
 });

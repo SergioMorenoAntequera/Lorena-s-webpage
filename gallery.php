@@ -72,10 +72,10 @@
     ?>
     
     <div id="galleryMain" class="container-fluid">
-        <header class="header row align-items-center">
+        <header class="header d-none d-md-flex row align-items-center">
             <!-- Nav -->
             <div class="col-1 text-left  animated fadeIn delay-2s">
-                <div id="nav-icon">
+                <div class="nav-icon">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -88,6 +88,22 @@
             </div>
             <!-- Social Media -->
             <div class="col-1 text-right  animated fadeIn delay-2s">
+                <a href="https://www.instagram.com/loremorean" class="text-reset"> <i class="fa fa-instagram mr-4"></i> </a>
+                <a href="https://www.facebook.com/lorena.morenoantequera" class="text-reset"> <i class="fa fa-facebook mr-4"></i> </a>
+            </div>
+        </header>
+        <header class="d-flex d-md-none row p-3 animated fadeIn delay-1s">
+            <!-- Nav -->
+            <div class="col-6 text-left">
+                <div class="nav-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- Social Media -->
+            <div class="col-6 text-right">
                 <a href="https://www.instagram.com/loremorean" class="text-reset"> <i class="fa fa-instagram mr-4"></i> </a>
                 <a href="https://www.facebook.com/lorena.morenoantequera" class="text-reset"> <i class="fa fa-facebook mr-4"></i> </a>
             </div>
@@ -111,7 +127,7 @@
                         <h3 id="galleryNext"> Siguiente </h3> 
                     </div>
                     <!-- Titulo -->
-                    <div class="col-12 order-4 h-25">
+                    <div class="col-12 order-4 h-25 mh-25">
                         <h1> Titulo de la coleccion </h1>
                     </div>
                 </div>
