@@ -71,42 +71,47 @@
         }
     ?>
     
-    <div id="galleryMain" class="container-fluid bg-danger">
-        <header class="header row bg-secondary">
-            <!-- Menú -->
-            <div class="col-3 text-left bg-danger">
-            <div id="nav-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <div id="galleryMain" class="container-fluid">
+        <header class="header row align-items-center">
+            <!-- Nav -->
+            <div class="col-1 text-left  animated fadeIn delay-2s">
+                <div id="nav-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
             <!-- Name -->
-            <div class="col-6 text-center">
-                <h1 class="animated fadeIn delay-2s"> Lorena Moreno Antequera </h1>
+            <div class="col-10 text-center animated fadeIn">
+                <h1 class=""> Galería </h1>
             </div>
             <!-- Social Media -->
-            <div class="col-3 text-right bg-danger">
-                Inta / Facebook
+            <div class="col-1 text-right  animated fadeIn delay-2s">
+                <a href="https://www.instagram.com/loremorean" class="text-reset"> <i class="fa fa-instagram mr-4"></i> </a>
+                <a href="https://www.facebook.com/lorena.morenoantequera" class="text-reset"> <i class="fa fa-facebook mr-4"></i> </a>
             </div>
         </header>
 
-        <div class="body row bg-primary text-center justify-content-center">
-            <div class="col-12 bg-success h-100">
+        <div class="body row text-center justify-content-center">
+            <div class="col-12 h-100">
                 <div class="row align-items-center justify-content-center h-100">
-                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right bg-danger">
-                        <button id="galleryPrev"> PREVIOUS </button>
+                    <!-- PREV BUTTON -->
+                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right">
+                        <h3 id="galleryPrev"> Anterior </h3>
                     </div>
-                    <div class="imgsGallery col-12 order-1 col-md-5 bg-warning h-75">
+                    <!-- IMAGES -->
+                    <div class="imgsGallery col-12 order-1 col-md-5 h-75 my-2">
                         <!-- <div class="img-container">
                             <img class="imgGallery" src="resources/img/formation/formation1.jpg" alt="">
                         </div> -->
                     </div>
-                    <div class="col-6 order-3 col-md-2 order-md-3 text-md-left bg-danger">
-                        <button id="galleryNext"> NEXT </button> 
+                    <!-- NEXT BUTTON -->
+                    <div class="col-6 order-3 col-md-2 order-md-3 text-md-left">
+                        <h3 id="galleryNext"> Siguiente </h3> 
                     </div>
-                    <div class="col-12 order-4 bg-dark h-25">
+                    <!-- Titulo -->
+                    <div class="col-12 order-4 h-25">
                         <h1> Titulo de la coleccion </h1>
                     </div>
                 </div>
