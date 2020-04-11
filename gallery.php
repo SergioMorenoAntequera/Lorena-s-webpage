@@ -8,6 +8,8 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="resources/css/style.css">
     <link rel="stylesheet" href="resources/css/gallery.css">
+    <link rel="stylesheet" href="resources/css/multimedia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     
 </head>
 <body>
@@ -73,11 +75,16 @@
         <header class="header row bg-secondary">
             <!-- Menú -->
             <div class="col-3 text-left bg-danger">
-                Menú button
+            <div id="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             </div>
             <!-- Name -->
             <div class="col-6 text-center">
-                Lorena Moreno Antequera
+                <h1 class="animated fadeIn delay-2s"> Lorena Moreno Antequera </h1>
             </div>
             <!-- Social Media -->
             <div class="col-3 text-right bg-danger">
@@ -99,7 +106,6 @@
                     <div class="col-6 order-3 col-md-2 order-md-3 text-md-left bg-danger">
                         <button id="galleryNext"> NEXT </button> 
                     </div>
-
                     <div class="col-12 order-4 bg-dark h-25">
                         <h1> Titulo de la coleccion </h1>
                     </div>

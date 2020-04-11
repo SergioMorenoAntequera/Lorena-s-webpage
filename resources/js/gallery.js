@@ -1,3 +1,9 @@
+//  Codigo nav
+$(document).ready(function(){
+	$('#nav-icon').click(function(){
+		$(this).toggleClass('open');
+	});
+});
 
 // Plugin para rotar
 $.fn.animateRotate = function(angle, duration, easing, complete) {
@@ -13,6 +19,8 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
       $({deg: 0}).animate({deg: angle}, args);
     });
 };
+
+
 
 var imgsGallery = $(".imgsGallery");
 var imgsInGallery;
@@ -95,6 +103,6 @@ $(document).ready(function(e){
                 canChangeImg = true;
             });
         }
+        
     }
-
 }); 
