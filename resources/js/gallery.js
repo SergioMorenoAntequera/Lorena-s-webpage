@@ -38,14 +38,18 @@ function animateCSS(element, animationName, callback) {
 
 var imgsGallery = $(".imgsGallery");
 var imgsInGallery;
-
-// Placing the images in the center and rotating them
+// INITIAL IMG PLACEMENT AND ROTATION
 $(document).ready(function(e){
     // Adding the images from the directory
     gallery.forEach(session => {
         imgsGallery.append("<div class='img-container'> <img class='imgGallery ' src='resources/img/gallery/"+ session.name +"/"+ session.imgs[0] +"' alt=''> </div>");
     });
+    
+    let titleCont = $(".img-container");
+    titleCont = titleCont.children()[titleCont.children().length - 1];
+    updateTitle((jQuery(titleCont).attr("src")));
 
+    // ROTATION    
     let firstRotation;
     if(Math.random() > 0.5 ? firstRotation = true :  firstRotation = false);
     imgsInGallery = document.querySelectorAll(".imgGallery");
@@ -62,15 +66,18 @@ $(document).ready(function(e){
             firstRotation = !firstRotation;
         }); 
     });
+
+    // TITLE
 });
 
+// CHANGING IMAGES BUTTON
 $(document).ready(function(e){
     canChangeImg = true;
     
     $("#galleryPrev").click(function(e){
         if(canChangeImg){
             canChangeImg = false;
-            changeGallery("prev")            
+            changeGallery("prev");          
         }
     });
 
@@ -88,6 +95,7 @@ $(document).ready(function(e){
         
         if(direction == "next"){
             let actualContainer = containers[containers.length - 1];
+            updateTitle(jQuery(containers[containers.length - 2]).find("img").attr("src"));
             // Next
             animateCSS(actualContainer, "fadeOutRight", function(){
                 animateCSS(actualContainer, "fadeIn");
@@ -97,6 +105,8 @@ $(document).ready(function(e){
 
         } else {
             let actualContainer = containers[0];
+            updateTitle(jQuery(actualContainer).find("img").attr("src"));
+            // updateTitle(actualContaincer);
             // Previous
             galleryJS.append(actualContainer);
             animateCSS(actualContainer, "fadeInLeft", function(){
@@ -104,10 +114,14 @@ $(document).ready(function(e){
             }); 
         }      
     }
+});
 
-    function changeTitle(title){
-        let galleryTitle = $(".title").find("h1");
+function updateTitle(imgSRC){
+    // Obtain actual Session name
+    let aux = imgSRC.search("/gallery/") + 9;
+    aux = imgSRC.substring(aux, imgSRC.length);
+    aux = aux.substring(0, aux.search("/"));
 
-        console.log(galleryTitle.text(title));
-    }
-}); 
+    let galleryTitle = $(".title").find("h1");
+    galleryTitle.text(aux);
+}

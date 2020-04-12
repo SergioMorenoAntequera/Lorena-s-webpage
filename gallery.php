@@ -118,17 +118,17 @@
                     </div>
 
                     <!-- PREV BUTTON -->
-                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right">
+                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right animated fadeInRight delay-1s">
                         <h3 id="galleryPrev" class="galButton"> Anterior </h3>
                     </div>
                     <!-- NEXT BUTTON -->
-                    <div class="col-6 order-3 col-md-2 order-md-3 text-md-left">
+                    <div class="col-6 order-3 col-md-2 order-md-3 text-md-left animated fadeInLeft delay-1s">
                         <h3 id="galleryNext" class="galButton"> Siguiente </h3> 
                     </div>
-                    
+
                     <!-- Titulo -->
-                    <div class="title col-12 order-4 h-25 mh-25">
-                        <h1> Titulo de la coleccion </h1>
+                    <div class="title col-12 order-4 h-25 mh-25 animated fadeInDown delay-1s">
+                        <h1>  </h1>
                     </div>
                 </div>
             </div>
