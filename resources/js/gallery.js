@@ -5,37 +5,6 @@ $(document).ready(function(){
 	});
 });
 
-// ROTATE PLUGIN
-$.fn.animateRotate = function(angle, duration, easing, complete) {
-    var args = $.speed(duration, easing, complete);
-    var step = args.step;
-    return this.each(function(i, e) {
-      args.complete = $.proxy(args.complete, e);
-      args.step = function(now) {
-        $.style(e, 'transform', 'rotate(' + now + 'deg)');
-        if (step) return step.apply(e, arguments);
-      };
-  
-      $({deg: 0}).animate({deg: angle}, args);
-    });
-};
-
-// ACTIVATE DESACTIVATE AIMATIONS
-function animateCSS(element, animationName, callback) {
-    const node = (element)
-    node.classList.add('animated', animationName)
-
-    function handleAnimationEnd() {
-        node.classList.remove('animated', animationName)
-        node.removeEventListener('animationend', handleAnimationEnd)
-
-        if (typeof callback === 'function') callback()
-    }
-
-    node.addEventListener('animationend', handleAnimationEnd)
-}
-
-
 var imgsGallery = $(".imgsGallery");
 var imgsInGallery;
 // INITIAL IMG PLACEMENT AND ROTATION
@@ -116,6 +85,51 @@ $(document).ready(function(e){
     }
 });
 
+//SHOWING SESSION PICTURES
+$(document).ready(function(e){
+
+    let sessionArea = $("#session");
+    $(".imgGallery").click(function(e){
+        e.stopPropagation();
+
+        let actualSession = getActualSession();
+        console.log(actualSession);
+
+        $(document).scrollTop(sessionArea.offset().top);
+
+    });
+});
+
+// JQUERY ROTATE PLUGIN
+$.fn.animateRotate = function(angle, duration, easing, complete) {
+    var args = $.speed(duration, easing, complete);
+    var step = args.step;
+    return this.each(function(i, e) {
+      args.complete = $.proxy(args.complete, e);
+      args.step = function(now) {
+        $.style(e, 'transform', 'rotate(' + now + 'deg)');
+        if (step) return step.apply(e, arguments);
+      };
+  
+      $({deg: 0}).animate({deg: angle}, args);
+    });
+};
+
+// ACTIVATE DESACTIVATE AIMATIONS
+function animateCSS(element, animationName, callback) {
+    const node = (element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
+
 function updateTitle(imgSRC){
     // Obtain actual Session name
     let aux = imgSRC.search("/gallery/") + 9;
@@ -124,4 +138,14 @@ function updateTitle(imgSRC){
 
     let galleryTitle = $(".title").find("h1");
     galleryTitle.text(aux);
+}
+
+function getActualSession(){
+    let actualSession = null;
+    gallery.forEach(session => {
+        if(session.name == $(".title").find("h1").text()){
+            actualSession = session;
+        }
+    });
+    return actualSession;
 }

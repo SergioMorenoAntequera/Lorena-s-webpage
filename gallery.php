@@ -119,11 +119,12 @@
 
                     <!-- PREV BUTTON -->
                     <div class="col-6 order-2 col-md-2 order-md-1 text-md-right animated fadeInRight delay-1s">
-                        <h3 id="galleryPrev" class="galButton"> Anterior </h3>
+                        <i id="galleryPrev" class="fa fa-angle-left fa-4x galButton p-4"></i>    
+                        <!-- <h3 id="galleryPrev" class="galButton"> Anterior </h3> -->
                     </div>
                     <!-- NEXT BUTTON -->
                     <div class="col-6 order-3 col-md-2 order-md-3 text-md-left animated fadeInLeft delay-1s">
-                        <h3 id="galleryNext" class="galButton"> Siguiente </h3> 
+                        <i id="galleryNext" class="fa fa-angle-right fa-4x galButton p-4"></i>
                     </div>
 
                     <!-- Titulo -->
@@ -133,6 +134,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="session">
+
     </div>
 
     <!-- Bootsptrap -->

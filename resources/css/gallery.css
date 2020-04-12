@@ -1,5 +1,6 @@
 html, body{
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #galleryMain {
@@ -33,9 +34,17 @@ html, body{
 }
 #galleryMain .body .img-container img{
     height: 100%;
+    cursor: pointer;
 }
 .galButton {
     z-index: 2;
     cursor: pointer;
 }
 
+/*********************************************/
+/****************** SESSION ******************/
+/*********************************************/
+#session {
+    height: 100vh;
+    background-color: #68040d;
+}
