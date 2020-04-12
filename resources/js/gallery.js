@@ -46,36 +46,23 @@ $(document).ready(function(e){
         imgsGallery.append("<div class='img-container'> <img class='imgGallery ' src='resources/img/gallery/"+ session.name +"/"+ session.imgs[0] +"' alt=''> </div>");
     });
 
+    let firstRotation;
+    if(Math.random() > 0.5 ? firstRotation = true :  firstRotation = false);
     imgsInGallery = document.querySelectorAll(".imgGallery");
     imgsInGallery.forEach(img => {
         animateCSS(img, "fadeInDown", function(){
-            rotateImg(jQuery(img));
+            // When they are done going down we rotate them
+            let rotation;
+            if(firstRotation){
+                rotation = Math.random() * (10 - 6) + 6;
+            } else {
+                rotation = Math.random() * (-6 - (-10)) + -10;
+            }
+            jQuery(img).animateRotate(rotation, 1000);
+            firstRotation = !firstRotation;
         }); 
     });
-    // animateCSS(imgsInGallery, "fadeInUp"); 
-    // imgsInGallery = $(".imgGallery");
-    // imgsInGallery.each(function(e){
-    //     //Show and rotate images 
-    //     $(this).hide().delay(250).show("drop", { direction: "up", distance:50 }, 700, function(){
-    //         
-    //     });
-    // }); 
-
 });
-function rotateImg(element){
-    // Rotating them
-    let rotationDirection;
-    if(parseInt(Math.random()*10) >= 5 ? rotationDirection = true : rotationDirection = false);
-    
-    let rotation;
-    if(rotationDirection){
-        rotation = Math.random() * (10 - 6) + 6;
-    } else {
-        rotation = Math.random() * (-6 - (-10)) + -10;
-    }
-    element.animateRotate(rotation, 1000);
-    rotationDirection = !rotationDirection;
-};
 
 $(document).ready(function(e){
     canChangeImg = true;
@@ -93,7 +80,6 @@ $(document).ready(function(e){
             changeGallery("next")            
         }
     });
-
 
     function changeGallery(direction){
         let galleryJS = document.querySelector(".imgsGallery");
@@ -117,5 +103,11 @@ $(document).ready(function(e){
                 canChangeImg = true;
             }); 
         }      
+    }
+
+    function changeTitle(title){
+        let galleryTitle = $(".title").find("h1");
+
+        console.log(galleryTitle.text(title));
     }
 }); 
