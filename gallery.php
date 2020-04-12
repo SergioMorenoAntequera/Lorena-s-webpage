@@ -112,19 +112,20 @@
         <div class="body row text-center justify-content-center">
             <div class="col-12 h-100">
                 <div class="row align-items-center justify-content-center h-100">
-                    <!-- PREV BUTTON -->
-                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right">
-                        <h3 id="galleryPrev"> Anterior </h3>
-                    </div>
                     <!-- IMAGES -->
-                    <div class="imgsGallery col-12 order-1 col-md-5 h-75 my-2">
+                    <div class="imgsGallery col-12 order-1 col-md-5 order-md-2 h-75 my-2">
                         <!-- <div class="img-container">
                             <img class="imgGallery" src="resources/img/formation/formation1.jpg" alt="">
                         </div> -->
                     </div>
+                    
+                    <!-- PREV BUTTON -->
+                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right">
+                        <h3 id="galleryPrev" class="galButton"> Anterior </h3>
+                    </div>
                     <!-- NEXT BUTTON -->
                     <div class="col-6 order-3 col-md-2 order-md-3 text-md-left">
-                        <h3 id="galleryNext"> Siguiente </h3> 
+                        <h3 id="galleryNext" class="galButton"> Siguiente </h3> 
                     </div>
                     <!-- Titulo -->
                     <div class="col-12 order-4 h-25 mh-25">

@@ -1,11 +1,11 @@
-//  Codigo nav
+//  NAV
 $(document).ready(function(){
 	$('.nav-icon').click(function(){
 		$(this).toggleClass('open');
 	});
 });
 
-// Plugin para rotar
+// ROTATE PLUGIN
 $.fn.animateRotate = function(angle, duration, easing, complete) {
     var args = $.speed(duration, easing, complete);
     var step = args.step;
@@ -20,28 +20,47 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
     });
 };
 
+// ACTIVATE DESACTIVATE AIMATIONS
+function animateCSS(element, animationName, callback) {
+    const node = (element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
 
 
 var imgsGallery = $(".imgsGallery");
 var imgsInGallery;
-// imgsGallery.fadeAndSlide(100000, "bottom");
 
 // Placing the images in the center and rotating them
 $(document).ready(function(e){
-
     // Adding the images from the directory
     gallery.forEach(session => {
         imgsGallery.append("<div class='img-container'> <img class='imgGallery ' src='resources/img/gallery/"+ session.name +"/"+ session.imgs[0] +"' alt=''> </div>");
     });
-    
 
-    imgsInGallery = $(".imgGallery");
-    imgsInGallery.each(function(e){
-        //Show and rotate images 
-        $(this).hide().delay(250).show("drop", { direction: "up", distance:50 }, 700, function(){
-            rotateImg($(this));
-        });
-    });  
+    imgsInGallery = document.querySelectorAll(".imgGallery");
+    imgsInGallery.forEach(img => {
+        animateCSS(img, "fadeInDown", function(){
+            rotateImg(jQuery(img));
+        }); 
+    });
+    // animateCSS(imgsInGallery, "fadeInUp"); 
+    // imgsInGallery = $(".imgGallery");
+    // imgsInGallery.each(function(e){
+    //     //Show and rotate images 
+    //     $(this).hide().delay(250).show("drop", { direction: "up", distance:50 }, 700, function(){
+    //         
+    //     });
+    // }); 
+
 });
 function rotateImg(element){
     // Rotating them
@@ -77,32 +96,26 @@ $(document).ready(function(e){
 
 
     function changeGallery(direction){
-        let containers = $(".img-container");
+        let galleryJS = document.querySelector(".imgsGallery");
+        let containers = document.querySelectorAll(".img-container");
+       
         
         if(direction == "next"){
+            let actualContainer = containers[containers.length - 1];
             // Next
-            let actualContainer = jQuery(containers.last());
-            let actualImg = actualContainer.find("img");
-            actualImg.hide("drop", { direction: "right", distance: 100 }, 500, function(e){
-                actualContainer.remove();
-                actualContainer.prependTo(imgsGallery);
-                actualImg.fadeIn(500);
-                
+            animateCSS(actualContainer, "fadeOutRight", function(){
+                animateCSS(actualContainer, "fadeIn");
+                galleryJS.prepend(actualContainer);
                 canChangeImg = true;
             });
+
         } else {
+            let actualContainer = containers[0];
             // Previous
-            let actualContainer = jQuery(containers.first());
-            let actualImg = actualContainer.find("img");
-            actualImg.hide();
-            actualContainer.remove();
-            actualContainer.appendTo(imgsGallery);
-            
-            actualImg.show("drop", { direction: "left", distance: 50 }, 500, function(e){
-                
+            galleryJS.append(actualContainer);
+            animateCSS(actualContainer, "fadeInLeft", function(){
                 canChangeImg = true;
-            });
-        }
-        
+            }); 
+        }      
     }
 }); 
