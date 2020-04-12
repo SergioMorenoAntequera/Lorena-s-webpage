@@ -88,7 +88,7 @@ $(document).ready(function(e){
 //SHOWING SESSION PICTURES
 $(document).ready(function(e){
 
-    let sessionArea = $("#session");
+    let sessionArea = $("#gallerySession");
     $(".imgGallery").click(function(e){
         e.stopPropagation();
 

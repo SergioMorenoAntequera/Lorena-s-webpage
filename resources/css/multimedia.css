@@ -2,6 +2,7 @@
     width: 40px;
     height: 45px;
     top: 4%;
+    left: 3%;
     position: fixed;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -69,4 +70,11 @@ transform: rotate(-45deg);
 top: 18px;
 width: 0%;
 left: 50%;
+}
+
+
+.socialMedia {
+    position: fixed;
+    top: 4%;
+    right: 3%;
 }

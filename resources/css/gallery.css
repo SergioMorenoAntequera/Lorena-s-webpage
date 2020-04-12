@@ -21,7 +21,7 @@ html, body{
 #galleryMain .body {
     height: 90%;
 }
-#galleryMain .imgsGallery { height: 80%;}
+#galleryMain .imgsGallery { height: 70%;}
 #galleryMain .title { height: 20%;}
 #galleryMain .body .img-container {
     position: absolute;
@@ -30,7 +30,7 @@ html, body{
     right: 0;
     margin: auto;
 
-    height: 90%;
+    height: 100%;
 }
 #galleryMain .body .img-container img{
     height: 100%;
@@ -44,7 +44,7 @@ html, body{
 /*********************************************/
 /****************** SESSION ******************/
 /*********************************************/
-#session {
+#gallerySession {
     height: 100vh;
     background-color: #68040d;
 }

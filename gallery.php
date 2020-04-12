@@ -70,46 +70,28 @@
             return $gallery;
         }
     ?>
+
+    <!-- NavBar -->
+    <div class="nav-icon animated fadeIn delay-2s">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!-- Social Media -->
+    <div class="socialMedia text-right  animated fadeIn delay-2s">
+        <a href="https://www.instagram.com/loremorean" class="text-reset"> <i class="fa fa-instagram mr-4"></i> </a>
+        <a href="https://www.facebook.com/lorena.morenoantequera" class="text-reset"> <i class="fa fa-facebook mr-4"></i> </a>
+    </div>
     
     <div id="galleryMain" class="container-fluid">
         <header class="header d-none d-md-flex row align-items-center">
-            <!-- Nav -->
-            <div class="col-1 text-left  animated fadeIn delay-2s">
-                <div class="nav-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <!-- Name -->
-            <div class="col-10 text-center animated fadeIn">
-                <h1 class=""> Galería </h1>
-            </div>
-            <!-- Social Media -->
-            <div class="col-1 text-right  animated fadeIn delay-2s">
-                <a href="https://www.instagram.com/loremorean" class="text-reset"> <i class="fa fa-instagram mr-4"></i> </a>
-                <a href="https://www.facebook.com/lorena.morenoantequera" class="text-reset"> <i class="fa fa-facebook mr-4"></i> </a>
-            </div>
-        </header>
-        <header class="d-flex d-md-none row p-3 animated fadeIn delay-1s">
-            <!-- Nav -->
-            <div class="col-6 text-left">
-                <div class="nav-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <!-- Social Media -->
-            <div class="col-6 text-right">
-                <a href="https://www.instagram.com/loremorean" class="text-reset"> <i class="fa fa-instagram mr-4"></i> </a>
-                <a href="https://www.facebook.com/lorena.morenoantequera" class="text-reset"> <i class="fa fa-facebook mr-4"></i> </a>
+            <div class="col-12 text-center animated fadeIn">
+                <h1> Galería </h1>
             </div>
         </header>
 
-        <div class="body row text-center justify-content-center">
+        <div class="body row text-center mt-5 mt-md-0">
             <div class="col-12 h-100">
                 <div class="row align-items-center justify-content-center h-100">
                     <!-- IMAGES -->
@@ -119,24 +101,24 @@
 
                     <!-- PREV BUTTON -->
                     <div class="col-6 order-2 col-md-2 order-md-1 text-md-right animated fadeInRight delay-1s">
-                        <i id="galleryPrev" class="fa fa-angle-left fa-4x galButton p-4"></i>    
+                        <i id="galleryPrev" class="fa fa-angle-left fa-4x galButton px-4"></i>    
                         <!-- <h3 id="galleryPrev" class="galButton"> Anterior </h3> -->
                     </div>
                     <!-- NEXT BUTTON -->
                     <div class="col-6 order-3 col-md-2 order-md-3 text-md-left animated fadeInLeft delay-1s">
-                        <i id="galleryNext" class="fa fa-angle-right fa-4x galButton p-4"></i>
+                        <i id="galleryNext" class="fa fa-angle-right fa-4x galButton px-4"></i>
                     </div>
 
-                    <!-- Titulo -->
-                    <div class="title col-12 order-4 h-25 mh-25 animated fadeInDown delay-1s">
-                        <h1>  </h1>
+                    <!-- SESSION NAME -->
+                    <div class="title col-12 order-4 animated fadeInDown delay-1s">
+                        <h1> Nombre de sesión </h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="session">
+    <div id="gallerySession">
 
     </div>
 
