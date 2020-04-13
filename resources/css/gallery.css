@@ -25,7 +25,17 @@ html, body{
     height: 90%;
 }
 #galleryMain .imgsGallery { height: 70%;}
-#galleryMain .title { height: 20%;}
+#galleryMain .titleCont { 
+    height: 20%; 
+    position: relative;
+}
+#galleryMain .title { 
+    position: absolute; 
+    display: inline-block;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%);
+}
 #galleryMain .body .img-container {
     position: absolute;
 
@@ -48,6 +58,12 @@ html, body{
 /****************** SESSION ******************/
 /*********************************************/
 #gallerySession {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #68040d;
+}
+#gallerySession #session {
+    position: relative;
+}
+#gallerySession #session .sessionImg {
+    max-height: 100px;
 }

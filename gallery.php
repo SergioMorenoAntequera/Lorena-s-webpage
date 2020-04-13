@@ -85,6 +85,7 @@
             <a class="gallery" href="">Galería</a>
             <a class="experience" href="">Experiencia</a>
             <a class="formation" href="">Formación</a>
+            <a class="contact" href="">Contacto</a>
         </div>
     </div>
 
@@ -103,7 +104,7 @@
         </header>
 
         <div class="body row text-center mt-5 mt-md-0">
-            <div class="col-12 h-100">
+            <div class="col-12 h-100  mt-5 mt-md-0">
                 <div class="row align-items-center justify-content-center h-100">
                     <!-- IMAGES -->
                     <div class="imgsGallery col-12 order-1 col-md-5 order-md-2">
@@ -121,8 +122,8 @@
                     </div>
 
                     <!-- SESSION NAME -->
-                    <div class="title col-12 order-4 animated fadeInDown delay-1s">
-                        <h1> Nombre de sesión </h1>
+                    <div class="titleCont col-12 order-4 animated fadeInDown delay-1s">
+                        <h2 class="title"> Nombre de sesión </h2>
                     </div>
                 </div>
             </div>
@@ -130,7 +131,24 @@
     </div>
 
     <div id="gallerySession" class="container-fluid">
-
+        <div class="row justify-content-center">
+            <i id="backToGallery" class="fa fa-angle-up fa-4x galButton"></i>   
+        </div>
+        <div id="session" class="row justify-content-center bg-warning">
+            PRA
+            <!-- <div class="sessionImg col-auto bg-primary">
+                FOTO 1
+            </div>
+            <div class="sessionImg col-auto bg-secondary">
+                FOTO 2
+            </div>
+            <div class="sessionImg col-auto bg-secondary">
+                FOTO 2
+            </div>
+            <div class="sessionImg col-auto bg-secondary">
+                FOTO 2
+            </div> -->
+        </div>
     </div>
 
     <!-- Bootsptrap -->

@@ -1,18 +1,25 @@
 
+$.fn.preload = function() {
+    this.each(function(){
+        $('<img/>')[0].src = this;
+    });
+}
 
 // Change index bg image
 $(document).ready(function(e){
     let body = $("#main")
     let imagesURL = "resources/img/main/"
-    let images = ["main1.jpeg", 
-        "main2.jpeg",
-        "main3.jpeg",
-        "main4.jpeg"
+    let images = [imagesURL+"main1.jpeg", 
+        imagesURL+"main2.jpeg",
+        imagesURL+"main3.jpeg",
+        imagesURL+"main4.jpeg"
     ];
+    $([images[0],images[1],images[2],images[3]]).preload();
+
     let index = 1;
     let changeBG = function(){
         // console.log(index);
-        body.css({"background-image": "url("+ imagesURL + images[index] +")"});
+        body.css({"background-image": "url("+images[index] +")"});
         if(++index >= images.length)
             index = 0;
         setTimeout(changeBG, 3000);
@@ -186,12 +193,15 @@ $(document).ready(function(){
         links.find(".gallery").attr("href", url+"gallery.php");
         links.find(".experience").attr("href", url+"#jobs");
         links.find(".formation").attr("href", url+"#formation");
+        links.find(".contact").attr("href", url+"#contactBottom");
     }else {
         url = url.substr(0, url.indexOf("/gallery.php"));
         links.find(".main").attr("href", url);
         links.find(".gallery").attr("href", "#");
+        links.find(".gallery").css("color", "#68040d")
         links.find(".experience").attr("href", url+"#jobs");
         links.find(".formation").attr("href", url+"#formation");
+        links.find(".contact").attr("href", url+"#contactBottom");
     }
 
     $('.nav-icon').click(function(){

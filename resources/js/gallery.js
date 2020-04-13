@@ -9,6 +9,7 @@ $(document).ready(function(e){
         imgsGallery.append("<div class='img-container'> <img class='imgGallery ' src='resources/img/gallery/"+ session.name +"/"+ session.imgs[0] +"' alt=''> </div>");
     });
     
+    // TITLE
     let titleCont = $(".img-container");
     titleCont = titleCont.children()[titleCont.children().length - 1];
     updateTitle((jQuery(titleCont).attr("src")));
@@ -31,7 +32,7 @@ $(document).ready(function(e){
         }); 
     });
 
-    // TITLE
+    
 });
 
 // CHANGING IMAGES BUTTON
@@ -84,14 +85,24 @@ $(document).ready(function(e){
 $(document).ready(function(e){
 
     let sessionArea = $("#gallerySession");
+    let session = $("#session");
+    
     $(".imgGallery").click(function(e){
         e.stopPropagation();
-
-        let actualSession = getActualSession();
-        console.log(actualSession);
-
         $(document).scrollTop(sessionArea.offset().top);
+        moveTitleDown();
 
+        let sessionJS =  getActualSession();
+        console.log(sessionJS);
+
+        // sessionJS.imgs.forEach(img => {
+        //     session.append("<div '> <img class='img-fluid' src='resources/img/gallery/"+ sessionJS.name + "/"+ img +"' alt=''> </div>")
+        // });
+        
+    });
+    $("#backToGallery").click(function(e){
+        $(document).scrollTop(0);
+        moveTitleUp(session);
     });
 });
 
@@ -136,16 +147,53 @@ function updateTitle(imgSRC){
     aux = imgSRC.substring(aux, imgSRC.length);
     aux = aux.substring(0, aux.search("/"));
 
-    let galleryTitle = $(".title").find("h1");
+    let galleryTitle = $(".title");
     galleryTitle.text(aux);
 }
 
 function getActualSession(){
     let actualSession = null;
     gallery.forEach(session => {
-        if(session.name == $(".title").find("h1").text()){
+        if(session.name == $(".title").text()){
             actualSession = session;
         }
     });
     return actualSession;
+}
+
+/******************************************************/
+/**************** AUX FUNCTIONS SESSIO ****************/
+/******************************************************/
+function moveTitleDown(){
+    let upB = $("#backToGallery");
+    let title = $(".title");
+    
+    let distance = upB.offset().top + 64 - title.offset().top;
+    console.log(distance);
+
+    title.animate({
+        top: distance + 10,
+        "font-size" : "65px",
+    },500, function(){
+        title.animate({
+            top: distance,
+            "font-size" : "60px",
+        }, function(){
+            $("#session").css({top: title.height() + 30});
+        });
+    });
+}
+function moveTitleUp(session){
+    let title = $(".title");
+    title.animate({
+        top: "-10px",
+        "font-size" : "35px",
+    },500, function(){
+        title.animate({
+            top: "0px",
+            "font-size" : "40px",
+        }, function(){
+            session.empty();
+        });
+    });
 }
