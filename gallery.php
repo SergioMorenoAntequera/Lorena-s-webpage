@@ -81,10 +81,10 @@
     </div>
     <div id="nav-menu" class="overlay">
         <div class="overlay-content">
-            <a href="#">Inicio</a>
-            <a href="#">Galería</a>
-            <a href="#">Experiencia</a>
-            <a href="#">Formación</a>
+            <a class="main" href="">Inicio</a>
+            <a class="gallery" href="">Galería</a>
+            <a class="experience" href="">Experiencia</a>
+            <a class="formation" href="">Formación</a>
         </div>
     </div>
 

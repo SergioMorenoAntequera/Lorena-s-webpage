@@ -175,12 +175,24 @@ $(document).ready(function(e){
 /***********************************************/
 //  NAV
 $(document).ready(function(){
-    let navMenu = $("#nav-menu");
     let overlay = $(".overlay");
-    
-    var getUrl = window.location;
-    var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-    console.log(baseUrl);
+    let links  = $(".overlay-content");
+    let url = window.location.href;
+ 
+    // Es una aplicación pequeña, no me quiero complicar
+    if(!url.includes("gallery")){
+        url = url.substr(0, url.indexOf("/gallery.php"));
+        links.find(".main").attr("href", "#");
+        links.find(".gallery").attr("href", url+"gallery.php");
+        links.find(".experience").attr("href", url+"#jobs");
+        links.find(".formation").attr("href", url+"#formation");
+    }else {
+        url = url.substr(0, url.indexOf("/gallery.php"));
+        links.find(".main").attr("href", url);
+        links.find(".gallery").attr("href", "#");
+        links.find(".experience").attr("href", url+"#jobs");
+        links.find(".formation").attr("href", url+"#formation");
+    }
 
     $('.nav-icon').click(function(){
         $(this).toggleClass('open');
@@ -189,8 +201,12 @@ $(document).ready(function(){
         } else {
             overlay.css({height: "0%"});
         }
-        
-	});
+    });
+
+    $(".overlay-content a").click(function(){
+        $('.nav-icon').toggleClass('open');
+        overlay.css({height: "0%"});
+    });
 });
 
 

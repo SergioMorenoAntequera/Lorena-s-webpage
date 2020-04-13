@@ -121,4 +121,5 @@ left: 50%;
     position: fixed;
     top: 4%;
     left: 3%;
+    z-index: 2;
 }

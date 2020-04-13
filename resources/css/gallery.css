@@ -13,6 +13,9 @@ html, body{
     height: 15%;
     background-color: #68040d;
 }
+#galleryMain .header h1 {
+    display: inline-block;
+}
 
 /*********************************************/
 /****************** GALLERY ******************/
