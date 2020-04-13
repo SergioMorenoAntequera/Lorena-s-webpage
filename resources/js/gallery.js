@@ -1,9 +1,4 @@
-//  NAV
-$(document).ready(function(){
-	$('.nav-icon').click(function(){
-		$(this).toggleClass('open');
-	});
-});
+
 
 var imgsGallery = $(".imgsGallery");
 var imgsInGallery;
@@ -99,6 +94,11 @@ $(document).ready(function(e){
 
     });
 });
+
+
+/***********************************************/
+/**************** AUX FUNCTIONS ****************/
+/***********************************************/
 
 // JQUERY ROTATE PLUGIN
 $.fn.animateRotate = function(angle, duration, easing, complete) {

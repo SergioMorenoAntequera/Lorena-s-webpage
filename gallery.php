@@ -71,6 +71,7 @@
         }
     ?>
 
+
     <!-- NavBar -->
     <div class="nav-icon animated fadeIn delay-2s">
         <span></span>
@@ -78,11 +79,21 @@
         <span></span>
         <span></span>
     </div>
+    <div id="nav-menu" class="overlay">
+        <div class="overlay-content">
+            <a href="#">Inicio</a>
+            <a href="#">Galería</a>
+            <a href="#">Experiencia</a>
+            <a href="#">Formación</a>
+        </div>
+    </div>
+
     <!-- Social Media -->
     <div class="socialMedia text-right  animated fadeIn delay-2s">
         <a href="https://www.instagram.com/loremorean" class="text-reset"> <i class="fa fa-instagram mr-4"></i> </a>
         <a href="https://www.facebook.com/lorena.morenoantequera" class="text-reset"> <i class="fa fa-facebook mr-4"></i> </a>
     </div>
+
     
     <div id="galleryMain" class="container-fluid">
         <header class="header d-none d-md-flex row align-items-center">
@@ -118,7 +129,7 @@
         </div>
     </div>
 
-    <div id="gallerySession">
+    <div id="gallerySession" class="container-fluid">
 
     </div>
 

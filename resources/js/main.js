@@ -170,6 +170,28 @@ $(document).ready(function(e){
     });
 });
 
+/***********************************************/
+/******************** NAV MENU *****************/
+/***********************************************/
+//  NAV
+$(document).ready(function(){
+    let navMenu = $("#nav-menu");
+    let overlay = $(".overlay");
+    
+    var getUrl = window.location;
+    var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+    console.log(baseUrl);
+
+    $('.nav-icon').click(function(){
+        $(this).toggleClass('open');
+        if($(this).hasClass("open")){
+            overlay.css({height: "100%"});
+        } else {
+            overlay.css({height: "0%"});
+        }
+        
+	});
+});
 
 
 // SCROLLING EFFECT FOR BOXES
