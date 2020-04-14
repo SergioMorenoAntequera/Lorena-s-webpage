@@ -192,7 +192,7 @@ a:hover{ text-decoration: none;}
 /****************************************************/
 /********************** GO UP  **********************/
 /****************************************************/
-#goUp{
+.goUp{
     display: none;
     position: fixed;
     height: 40px;
@@ -200,7 +200,7 @@ a:hover{ text-decoration: none;}
     right: 20px;
     bottom: 20px;
 }
-#goUp i {
+.goUp i {
     position: relative;
     cursor: pointer;
     top: -20px;

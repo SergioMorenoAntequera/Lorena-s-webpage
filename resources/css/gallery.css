@@ -79,6 +79,7 @@ html, body{
 
 .grid-item {
   float: left;
+  /* visibility: hidden; */
 }
 
 .grid-item img {

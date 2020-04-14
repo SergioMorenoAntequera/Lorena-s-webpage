@@ -84,31 +84,36 @@ $(document).ready(function(e){
 
 //SHOWING SESSION PICTURES
 $(document).ready(function(e){
-      
+    
     let sessionArea = $("#gallerySession");
     let session = $("#session");
-    
+    let canSeeSession = true;
+
     $(".imgGallery").click(function(e){
         e.stopPropagation();
-        $(document).scrollTop(sessionArea.offset().top);
-        moveTitleDown();
-
-        let sessionJS =  getActualSession();
-        console.log(sessionJS);
-
-        sessionJS.imgs.forEach(img => {
-            session.append("<div class='grid-item animated fadeIn'> <img src='resources/img/gallery/"+ sessionJS.name + "/"+ img +"' alt=''> </div>");
-        });
-        // init Masonry after all images have loaded
-        var $grid = $('.grid').imagesLoaded( function() {
-            $grid.masonry({
-            itemSelector: '.grid-item',
-            percentPosition: true,
-            columnWidth: '.grid-sizer'
-            }); 
-        });
-  
-        
+        if(canSeeSession){
+            canSeeSession = false;
+            $(document).scrollTop(sessionArea.offset().top);
+            moveTitleDown();
+    
+            let sessionJS =  getActualSession();
+            console.log(sessionJS);
+    
+            sessionJS.imgs.forEach(img => {
+                session.append("<div class='grid-item animated fadeInUp'> <img src='resources/img/gallery/"+ sessionJS.name + "/"+ img +"' alt=''> </div>");
+                let justAddedImg = session.children().last()[0];
+                animateCSS(justAddedImg, "fadeIn");
+    
+            });
+            // init Masonry after all images have loaded
+            var $grid = $('.grid').imagesLoaded( function() {
+                $grid.masonry({
+                itemSelector: '.grid-item',
+                percentPosition: true,
+                columnWidth: '.grid-sizer'
+                }); 
+            });
+        }
     });
     $("a.gallery").click(function(){
         $("#backToGallery").click();    
@@ -116,10 +121,16 @@ $(document).ready(function(e){
     $("#backToGallery").click(function(e){
         $(document).scrollTop(0);
         moveTitleUp(session);
+        canSeeSession = true;
     });
 });
 
-
+// Button go up
+$(document).ready(function(e){
+    $("#goUpGallery").click(function(){
+        $("#backToGallery").click();
+    })
+})
 /***********************************************/
 /**************** AUX FUNCTIONS ****************/
 /***********************************************/
