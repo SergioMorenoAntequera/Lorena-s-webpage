@@ -134,9 +134,9 @@
         <div class="row justify-content-center">
             <i id="backToGallery" class="fa fa-angle-up fa-4x galButton"></i>   
         </div>
-        <div id="session" class="row justify-content-center bg-warning">
+        <div id="session" class="row justify-content-center bg-warning mt-2">
             PRA
-            <!-- <div class="sessionImg col-auto bg-primary">
+            <div class="sessionImg col-auto bg-primary">
                 FOTO 1
             </div>
             <div class="sessionImg col-auto bg-secondary">
@@ -147,7 +147,7 @@
             </div>
             <div class="sessionImg col-auto bg-secondary">
                 FOTO 2
-            </div> -->
+            </div>
         </div>
     </div>
 

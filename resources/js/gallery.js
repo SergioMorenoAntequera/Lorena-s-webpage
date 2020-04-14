@@ -168,20 +168,25 @@ function moveTitleDown(){
     let upB = $("#backToGallery");
     let title = $(".title");
     
-    let distance = upB.offset().top + 64 - title.offset().top;
-    console.log(distance);
+    let distanceToMoveTitle = upB.offset().top + 64 - title.offset().top;
+    
+    // To know how much we have to go down
+    title.css("font-size", "60px");
+    $("#session").css({top: parseInt(title.height())});
+    title.css("font-size", "40px");
 
-    title.animate({
-        top: distance + 10,
-        "font-size" : "65px",
-    },500, function(){
+    if(title.css("top") != 0){
         title.animate({
-            top: distance,
-            "font-size" : "60px",
-        }, function(){
-            $("#session").css({top: title.height() + 30});
+            top: distanceToMoveTitle + 10,
+            "font-size" : "65px",
+        },500, function(){
+            title.animate({
+                top: distanceToMoveTitle,
+                "font-size" : "60px",
+            });
         });
-    });
+    }
+    
 }
 function moveTitleUp(session){
     let title = $(".title");
@@ -191,9 +196,9 @@ function moveTitleUp(session){
     },500, function(){
         title.animate({
             top: "0px",
-            "font-size" : "40px",
+            "font-size" : "2rem",
         }, function(){
-            session.empty();
+            // session.empty();
         });
     });
 }

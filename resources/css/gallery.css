@@ -6,6 +6,7 @@ html, body{
 #galleryMain {
     height: 100vh;
 }
+
 /***********************************************/
 /******************** HEADER *******************/
 /***********************************************/
@@ -20,18 +21,21 @@ html, body{
 /*********************************************/
 /****************** GALLERY ******************/
 /*********************************************/
-
 #galleryMain .body {
     height: 90%;
 }
-#galleryMain .imgsGallery { height: 70%;}
+#galleryMain .imgsGallery { 
+    height: 70%;
+}
 #galleryMain .titleCont { 
     height: 20%; 
     position: relative;
 }
 #galleryMain .title { 
+    font-size: 40px;
     position: absolute; 
     display: inline-block;
+    width: 100%;
     top: 0px;
     left: 50%;
     transform: translate(-50%);
@@ -63,7 +67,9 @@ html, body{
 }
 #gallerySession #session {
     position: relative;
+    height: 400px;
 }
 #gallerySession #session .sessionImg {
+    height: 100px;
     max-height: 100px;
 }
