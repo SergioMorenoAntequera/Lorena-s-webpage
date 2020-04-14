@@ -4,6 +4,7 @@ var imgsGallery = $(".imgsGallery");
 var imgsInGallery;
 // INITIAL IMG PLACEMENT AND ROTATION
 $(document).ready(function(e){
+    window.scrollTo(0, 0);
     // Adding the images from the directory
     gallery.forEach(session => {
         imgsGallery.append("<div class='img-container'> <img class='imgGallery ' src='resources/img/gallery/"+ session.name +"/"+ session.imgs[0] +"' alt=''> </div>");
@@ -83,7 +84,7 @@ $(document).ready(function(e){
 
 //SHOWING SESSION PICTURES
 $(document).ready(function(e){
-
+      
     let sessionArea = $("#gallerySession");
     let session = $("#session");
     
@@ -95,10 +96,22 @@ $(document).ready(function(e){
         let sessionJS =  getActualSession();
         console.log(sessionJS);
 
-        // sessionJS.imgs.forEach(img => {
-        //     session.append("<div '> <img class='img-fluid' src='resources/img/gallery/"+ sessionJS.name + "/"+ img +"' alt=''> </div>")
-        // });
+        sessionJS.imgs.forEach(img => {
+            session.append("<div class='grid-item animated fadeIn'> <img src='resources/img/gallery/"+ sessionJS.name + "/"+ img +"' alt=''> </div>");
+        });
+        // init Masonry after all images have loaded
+        var $grid = $('.grid').imagesLoaded( function() {
+            $grid.masonry({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            columnWidth: '.grid-sizer'
+            }); 
+        });
+  
         
+    });
+    $("a.gallery").click(function(){
+        $("#backToGallery").click();    
     });
     $("#backToGallery").click(function(e){
         $(document).scrollTop(0);
@@ -198,7 +211,7 @@ function moveTitleUp(session){
             top: "0px",
             "font-size" : "2rem",
         }, function(){
-            // session.empty();
+            session.empty();
         });
     });
 }

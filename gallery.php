@@ -102,7 +102,6 @@
                 <h1> Galería </h1>
             </div>
         </header>
-
         <div class="body row text-center mt-5 mt-md-0">
             <div class="col-12 h-100  mt-5 mt-md-0">
                 <div class="row align-items-center justify-content-center h-100">
@@ -130,24 +129,12 @@
         </div>
     </div>
 
-    <div id="gallerySession" class="container-fluid">
+    <div id="gallerySession" class="container-fluid p-0 ">
         <div class="row justify-content-center">
             <i id="backToGallery" class="fa fa-angle-up fa-4x galButton"></i>   
         </div>
-        <div id="session" class="row justify-content-center bg-warning mt-2">
-            PRA
-            <div class="sessionImg col-auto bg-primary">
-                FOTO 1
-            </div>
-            <div class="sessionImg col-auto bg-secondary">
-                FOTO 2
-            </div>
-            <div class="sessionImg col-auto bg-secondary">
-                FOTO 2
-            </div>
-            <div class="sessionImg col-auto bg-secondary">
-                FOTO 2
-            </div>
+        <div id="session" class="grid mt-3">
+            <div class="grid-sizer"></div>
         </div>
     </div>
 
@@ -158,6 +145,10 @@
     <!-- JQuey -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"> </script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- Plugin ImagesLoaded -->
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <!-- Plugin columnas -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script> 
         var gallery = <?php echo $galleryJSON ?>;
     </script>
