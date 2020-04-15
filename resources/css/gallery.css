@@ -72,7 +72,15 @@ html, body{
     position: relative;
     background-color: #68040d;
 }
-.grid-item { width: 33.333%; padding: 20px;  }
+.grid-item {padding: 2%;}
+
+@media (min-width: 768px) {
+    .grid-item { width: 33.333%;}
+}
+@media (max-width: 768px) {
+    .grid-item { width: 50%;}
+}
+
 .grid-item--width2 { width: 50%; }
 .grid-item img {
     width: 100%;
