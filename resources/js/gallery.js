@@ -1,7 +1,8 @@
-
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// GALLERY ///////////////////////////////////////////////////////////////////////////////////////
 var imgsGallery = $(".imgsGallery");
 var imgsInGallery;
+
 // INITIAL IMG PLACEMENT AND ROTATION
 $(document).ready(function(e){
     window.scrollTo(0, 0);
@@ -82,58 +83,67 @@ $(document).ready(function(e){
     }
 });
 
-//SHOWING SESSION PICTURES
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// SESSION ///////////////////////////////////////////////////////////////////////////////////////
+
+let sessionArea = $("#gallerySession");
+let session = $("#session");
+session.packery({
+    itemSelector: '.grid-item',
+});
+let canSeeSession = true;
+
+//SHOWING AND HIDDING SESSION PICTURES
 $(document).ready(function(e){
     
-    let sessionArea = $("#gallerySession");
-    let session = $("#session");
-    let canSeeSession = true;
 
+    // SHOW THE SESSION
     $(".imgGallery").click(function(e){
         e.stopPropagation();
+
         if(canSeeSession){
             canSeeSession = false;
+            
+            // Add the images of the session
+            let sessionJS =  getActualSession();
+            sessionJS.imgs.forEach(img => {
+                let $elementToAdd = $("<div class='grid-item animated fadeInUp'> <img src='resources/img/gallery/"+ sessionJS.name + "/"+ img +"' alt=''> </div>");
+                $elementToAdd.imagesLoaded(function(){
+                    session.append( $elementToAdd ).packery('appended', $elementToAdd);
+                });
+            });
+
+            // Go down
             $(document).scrollTop(sessionArea.offset().top);
             moveTitleDown();
-    
-            let sessionJS =  getActualSession();
-            console.log(sessionJS);
-    
-            sessionJS.imgs.forEach(img => {
-                session.append("<div class='grid-item animated fadeInUp'> <img src='resources/img/gallery/"+ sessionJS.name + "/"+ img +"' alt=''> </div>");
-                let justAddedImg = session.children().last()[0];
-                animateCSS(justAddedImg, "fadeIn");
-    
-            });
-            // init Masonry after all images have loaded
-            var $grid = $('.grid').imagesLoaded( function() {
-                $grid.masonry({
-                itemSelector: '.grid-item',
-                percentPosition: true,
-                columnWidth: '.grid-sizer'
-                }); 
-            });
         }
+    });
+    
+    // HIDE THE SESSION
+    $("#backToGallery").click(function(e){
+        $(document).scrollTop(0);
+        moveTitleUp();
+        canSeeSession = true;
     });
     $("a.gallery").click(function(){
         $("#backToGallery").click();    
     });
-    $("#backToGallery").click(function(e){
-        $(document).scrollTop(0);
-        moveTitleUp(session);
-        canSeeSession = true;
-    });
 });
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// EXTRA /////////////////////////////////////////////////////////////////////////////////////////
 // Button go up
 $(document).ready(function(e){
     $("#goUpGallery").click(function(){
         $("#backToGallery").click();
     })
 })
-/***********************************************/
-/**************** AUX FUNCTIONS ****************/
-/***********************************************/
+
+/********************************************************/
+/**************** AUX FUNCTIONS GALLERY ****************/
+/*******************************************************/
 
 // JQUERY ROTATE PLUGIN
 $.fn.animateRotate = function(angle, duration, easing, complete) {
@@ -185,9 +195,6 @@ function getActualSession(){
     return actualSession;
 }
 
-/******************************************************/
-/**************** AUX FUNCTIONS SESSIO ****************/
-/******************************************************/
 function moveTitleDown(){
     let upB = $("#backToGallery");
     let title = $(".title");
@@ -199,6 +206,7 @@ function moveTitleDown(){
     $("#session").css({top: parseInt(title.height())});
     title.css("font-size", "40px");
 
+    //Animation going down
     if(title.css("top") != 0){
         title.animate({
             top: distanceToMoveTitle + 10,
@@ -212,7 +220,12 @@ function moveTitleDown(){
     }
     
 }
-function moveTitleUp(session){
+
+/******************************************************/
+/**************** AUX FUNCTIONS SESSION ****************/
+/******************************************************/
+
+function moveTitleUp(){
     let title = $(".title");
     title.animate({
         top: "-10px",
@@ -222,7 +235,13 @@ function moveTitleUp(session){
             top: "0px",
             "font-size" : "2rem",
         }, function(){
-            session.empty();
+            removeImagesFromGrid();
         });
     });
+}
+
+function removeImagesFromGrid(){
+    let $aux = $(".grid-item");
+    session.packery('remove', $aux).packery('layout');
+    $aux.remove();
 }

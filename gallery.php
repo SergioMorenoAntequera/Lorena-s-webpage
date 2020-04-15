@@ -134,7 +134,6 @@
             <i id="backToGallery" class="fa fa-angle-up fa-4x galButton"></i>   
         </div>
         <div id="session" class="grid mt-3">
-            <div class="grid-sizer"></div>
         </div>
     </div>
 
@@ -152,7 +151,8 @@
     <!-- Plugin ImagesLoaded -->
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <!-- Plugin columnas -->
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
+    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
     <script> 
         var gallery = <?php echo $galleryJSON ?>;
     </script>
