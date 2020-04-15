@@ -135,7 +135,30 @@
         </div>
         <div id="session" class="grid mt-3">
         </div>
+        
+        <!-------------------------------------------------------------}}
+        {{------------------------ CAROUSEL -------------------------}}
+        {{------------------------------------------------------------->
+        <div id="carousel"> 
+            <div class="content">
+                <div class="upperPart">
+                    <i class    ="fa fa-times fa-lg X"></i>
+                    <i class="fa fa-angle-left fa-4x arrow left"></i>
+                    <i class="fa fa-angle-right fa-4x arrow right"></i>
+                    <img class="bigImg" src="">
+                </div>
+                <div class="lowerPart"> 
+                    <div class="images">
+                        <!-- <img class="selected" src="{{url('img/resources/sergio.jpg')}}" alt="">
+                        <img src="{{url('img/resources/sergio.jpg')}}" alt="">
+                        <img src="{{url('img/resources/sergio.jpg')}}" alt=""> -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    
 
     <div class="goUp" id="goUpGallery">
         <i class="fa fa-angle-up fa-4x"></i>

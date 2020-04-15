@@ -245,3 +245,54 @@ function removeImagesFromGrid(){
     session.packery('remove', $aux).packery('layout');
     $aux.remove();
 }
+
+
+// {{-----------------------------------------------------------}}
+// {{--------------------- CAROUSEL CODE -----------------------}}
+// {{-----------------------------------------------------------}}
+// Mostrarlo 
+$(document).ready(function(){
+    let actualSession;
+    let imagesPath;
+
+    $("div").on("click", ".grid-item img", function(e){
+        e.stopPropagation();
+        actualSession = getActualSession();
+        imagesPath = "resources/img/gallery/" + actualSession.name + "/"
+        
+        showGallery($(this));
+    });
+    
+    function showGallery(imageClicked){
+        $("#carousel .images").empty();
+        let mainImgUrl = imageClicked.attr("src");
+        $("#carousel .bigImg").attr("src", mainImgUrl);
+        
+        for (let i = 0; i < actualSession.imgs.length; i++) {
+            let imgUrl = imagesPath + actualSession.imgs[i];
+            console.log(imgUrl);
+            if(mainImgUrl == imgUrl){
+                $("#carousel .images").append("<img class='selected' src='"+imgUrl+"' alt=''>");
+            } else {
+                $("#carousel .images").append("<img src='"+imgUrl+"' alt=''>");
+            }
+        }
+        $("#carousel").fadeIn(150);
+    }
+    
+    // Ocultarlo
+    $("#carousel .X").click(function(e){
+        $("#carousel").fadeOut(150);
+    });
+    
+    //Cambiar de foto 
+    $("#carousel .images").on("click", 'img', function(e){
+        let imgSelected = $(this);
+        if(!imgSelected.hasClass("selected")){
+            $("#carousel .images").find(".selected").removeClass("selected");
+            imgSelected.addClass("selected"); 
+    
+            $("#carousel .bigImg").attr("src", imgSelected.attr("src"));
+        }
+    });
+});
