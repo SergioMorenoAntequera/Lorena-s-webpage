@@ -208,6 +208,7 @@ function moveTitleDown(){
     title.css("font-size", "40px");
 
     //Animation going down
+    title.css("top", "0px");
     if(title.css("top") != 0){
         title.animate({
             top: distanceToMoveTitle + 10,

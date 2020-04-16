@@ -68,11 +68,24 @@ html, body{
     overflow-x: hidden;
     background-color: #68040d;
 }
+#gallerySession::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+#gallerySession::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#gallerySession::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+    
 #gallerySession #session {
     position: relative;
     background-color: #68040d;
 }
-.grid-item {padding: 2%; cursor: pointer; border-radius: 2px;}
+.grid-item {padding: 1%; border-radius: 2px;}
 
 @media (min-width: 768px) {
     .grid-item { width: 33.333%;}
@@ -84,4 +97,5 @@ html, body{
 .grid-item--width2 { width: 50%; }
 .grid-item img {
     width: 100%;
+    cursor: pointer;
 }
