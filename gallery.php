@@ -137,20 +137,19 @@
         </div>
         
         <!-------------------------------------------------------------}}
-        {{------------------------ CAROUSEL -------------------------}}
+        {{------------------------ CAROUSEL ---------------------------}}
         {{------------------------------------------------------------->
         <div id="carousel"> 
             <div class="content">
                 <div class="upperPart">
-                    <i class    ="fa fa-times fa-3x X"></i>
+                    <img class="bigImg" src="">
+                    <i class="fa fa-times fa-3x X"></i>
                     <i class="fa fa-angle-left fa-4x arrow left"></i>
                     <i class="fa fa-angle-right fa-4x arrow right"></i>
-                    <img class="bigImg" src="">
                 </div>
             </div>
         </div>
     </div>
-    
     
 
     <div class="goUp" id="goUpGallery">

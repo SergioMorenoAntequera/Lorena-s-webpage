@@ -154,12 +154,14 @@ left: 50%;
     height: 3%;
     right: 3%;
     top: 2.5%;
+    z-index: 2;
     cursor: pointer;
 }
 #carousel .content .upperPart .arrow {
     position: absolute;
     height: 5%;
     top: 45%;
+    z-index: 2;
     cursor: pointer;
 }
 #carousel .content .upperPart .arrow.left {
@@ -169,11 +171,10 @@ left: 50%;
     right: 3%;
 }
 #carousel .content .upperPart .bigImg {
-    position: relative;
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    max-height: 100%;
-
-    opacity: 1;
 }

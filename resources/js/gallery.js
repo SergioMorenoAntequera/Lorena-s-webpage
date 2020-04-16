@@ -132,7 +132,6 @@ $(document).ready(function(e){
     });
 });
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // EXTRA /////////////////////////////////////////////////////////////////////////////////////////
 // Button go up
@@ -256,7 +255,8 @@ function removeImagesFromGrid(){
 $(document).ready(function(){
     let actualSession;
     let imagesPath;
-
+    
+    // SHOW
     $("div").on("click", ".grid-item img", function(e){
         e.stopPropagation();
         actualSession = getActualSession();
@@ -265,48 +265,71 @@ $(document).ready(function(){
         showGallery($(this));
     });
     
+    // CHANGE TO NEXT IMG
+    $("#carousel .arrow.right").click(function(e){
+        e.stopPropagation()
+        
+        changeActualImg(getNextImgName());
+    });
+
+    // CHANGE TO PREVIOUS IMG
+    $("#carousel .arrow.left").click(function(e){
+        e.stopPropagation()
+
+        changeActualImg(getPreviousImgName());
+    })
+
+    // HIDE
+    $("#carousel").click(function(e){
+        $("#carousel").fadeOut(150);
+    });
+    $(".bigImg").click(function(e){
+        e.stopPropagation();
+    })
+
     function showGallery(imageClicked){
         $("#carousel .images").empty();
         let mainImgUrl = imageClicked.attr("src");
         $("#carousel .bigImg").attr("src", mainImgUrl);
         
-        // for (let i = 0; i < actualSession.imgs.length; i++) {
-        //     let imgUrl = imagesPath + actualSession.imgs[i];
-        //     console.log(imgUrl);
-        //     if(mainImgUrl == imgUrl){
-        //         $("#carousel .images").append("<img class='selected' src='"+imgUrl+"' alt=''>");
-        //     } else {
-        //         $("#carousel .images").append("<img src='"+imgUrl+"' alt=''>");
-        //     }
-        // }
         $("#carousel").fadeIn(150);
     }
-    
-    $(".bigImg").click(function(e){
-        e.stopPropagation();
-    })
-    $("#carousel .arrow.right").click(function(e){
-        e.stopPropagation()
-        console.log("PRA");
-    });
-    $("#carousel .arrow.left").click(function(e){
-        e.stopPropagation()
-        console.log("PRO");
-    })
 
-    // Ocultarlo
-    $("#carousel").click(function(e){
-        $("#carousel").fadeOut(150);
-    });
-    
-    //Cambiar de foto 
-    // $("#carousel .images").on("click", 'img', function(e){
-    //     let imgSelected = $(this);
-    //     if(!imgSelected.hasClass("selected")){
-    //         $("#carousel .images").find(".selected").removeClass("selected");
-    //         imgSelected.addClass("selected"); 
-    
-    //         $("#carousel .bigImg").attr("src", imgSelected.attr("src"));
-    //     }
-    // });
+    function getNextImgName(){
+        let actualImgUrl = $("#carousel .bigImg").attr("src");
+        let actualImgName = actualImgUrl.replace(imagesPath, "");
+
+        for (let i = 0; i < actualSession.imgs.length; i++) {
+            const imgName = actualSession.imgs[i];
+
+            if(actualImgName == imgName){
+                // We control it's not the last one
+                if(actualSession.imgs[i+1] == undefined){
+                    return actualSession.imgs[0];
+                } else {
+                    return actualSession.imgs[i+1];
+                }
+            }
+        }
+    }
+    function getPreviousImgName(){
+        let actualImgUrl = $("#carousel .bigImg").attr("src");
+        let actualImgName = actualImgUrl.replace(imagesPath, "");
+
+        for (let i = 0; i < actualSession.imgs.length; i++) {
+            const imgName = actualSession.imgs[i];
+
+            if(actualImgName == imgName){
+                // We control it's not the first one
+                if(actualSession.imgs[i-1] == undefined){
+                    return actualSession.imgs[actualSession.imgs.length - 1];
+                } else {
+                    return actualSession.imgs[i-1];
+                }
+            }
+        }
+    }
+    function changeActualImg(newImageName){
+        $(".bigImg").attr("src", imagesPath + newImageName);
+    }
 });
