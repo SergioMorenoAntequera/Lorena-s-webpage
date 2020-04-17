@@ -52,7 +52,6 @@ html, body{
 }
 #galleryMain .body .img-container img{
     height: 100%;
-    max-width: 100%;
     cursor: pointer;
 }
 .galButton {

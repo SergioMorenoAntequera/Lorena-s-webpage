@@ -98,7 +98,8 @@ let canSeeSession = true;
 $(document).ready(function(e){
     
     // SHOW THE SESSION
-    $(".imgGallery").click(function(e){
+    $("div").on("click", ".imgGallery", function(e){
+    // $(".imgGallery").click(function(e){
         e.stopPropagation();
 
         if(canSeeSession){
