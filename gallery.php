@@ -136,6 +136,7 @@
         <div id="session" class="grid mt-3">
         </div>
         
+
         <!-------------------------------------------------------------}}
         {{------------------------ CAROUSEL ---------------------------}}
         {{------------------------------------------------------------->
@@ -151,6 +152,9 @@
         </div>
     </div>
     
+    <a href="#gallerySession">
+        <div id="linkSession"></div>
+    </a>
 
     <div class="goUp" id="goUpGallery">
         <i class="fa fa-angle-up fa-4x"></i>

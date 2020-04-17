@@ -81,6 +81,7 @@ $(document).ready(function(e){
             }); 
         }      
     }
+
 });
 
 
@@ -98,16 +99,21 @@ let canSeeSession = true;
 $(document).ready(function(e){
     
     // SHOW THE SESSION
-    $("div").on("click", ".imgGallery", function(e){
-    // $(".imgGallery").click(function(e){
+    $(".imgGallery").on('click touchstart', function(e){
+        // $(".imgGallery").click(function(e){
+        if(e.handled === false) return
+        e.preventDefault();
         e.stopPropagation();
-
+        e.handled = true;
+        
         if(canSeeSession){
             canSeeSession = false;
             
             // Add the images of the session
             let sessionJS =  getActualSession();
+            
             sessionJS.imgs.forEach(img => {
+                
                 let $elementToAdd = $("<div class='grid-item animated fadeInUp'> <img src='resources/img/gallery/"+ sessionJS.name + "/"+ img +"' alt=''> </div>");
                 $elementToAdd.imagesLoaded(function(){
                     session.append( $elementToAdd ).packery('appended', $elementToAdd);
@@ -115,7 +121,9 @@ $(document).ready(function(e){
             });
 
             // Go down
-            $(document).scrollTop(sessionArea.offset().top);
+            // $("body").scrollTop(sessionArea.offset().top);
+            
+            $("#linkSession").click();
             moveTitleDown();
         }
     });
@@ -188,8 +196,9 @@ function updateTitle(imgSRC){
 
 function getActualSession(){
     let actualSession = null;
+    let actualTitle = document.querySelector(".title").textContent;
     gallery.forEach(session => {
-        if(session.name == $(".title").text()){
+        if(session.name.trim() == actualTitle){
             actualSession = session;
         }
     });
