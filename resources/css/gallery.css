@@ -52,7 +52,14 @@ html, body{
 }
 #galleryMain .body .img-container img{
     height: 100%;
+    max-width: 100%;
     cursor: pointer;
+}
+@media (min-width: 768px) {
+    .grid-item { width: 33.333%;}
+}
+@media (max-width: 768px) {
+    .grid-item { width: 50%;}
 }
 .galButton {
     z-index: 2;
@@ -83,7 +90,6 @@ html, body{
     background-color: #68040d;
 }
 .grid-item {padding: 1%; border-radius: 2px;}
-
 @media (min-width: 768px) {
     .grid-item { width: 33.333%;}
 }

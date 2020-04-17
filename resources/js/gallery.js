@@ -111,7 +111,7 @@ $(document).ready(function(e){
             
             // Add the images of the session
             let sessionJS =  getActualSession();
-            
+
             sessionJS.imgs.forEach(img => {
                 
                 let $elementToAdd = $("<div class='grid-item animated fadeInUp'> <img src='resources/img/gallery/"+ sessionJS.name + "/"+ img +"' alt=''> </div>");
@@ -131,6 +131,12 @@ $(document).ready(function(e){
     
 
     // HIDE THE SESSION
+    $(window).on("navigate", function (event, data) {
+        var direction = data.state.direction;
+        if (direction == 'back') {
+            $("#backToGallery").click(); 
+        }
+    });
     $("#backToGallery").click(function(e){
         $(document).scrollTop(0);
         moveTitleUp();
