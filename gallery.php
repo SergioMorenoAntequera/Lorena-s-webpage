@@ -106,17 +106,17 @@
             <div class="col-12 h-100  mt-5 mt-md-0">
                 <div class="row align-items-center justify-content-center h-100">
                     <!-- IMAGES -->
-                    <div class="imgsGallery col-12 order-1 col-md-5 order-md-2">
+                    <div class="imgsGallery col-12 order-1 col-md-5 order-md-2 bg-secondary">
                         
                     </div>
 
                     <!-- PREV BUTTON -->
-                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right animated fadeInRight delay-1s">
+                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right animated fadeInRight delay-1s bg-primary">
                         <i id="galleryPrev" class="fa fa-angle-left fa-4x galButton px-4"></i>    
                         <!-- <h3 id="galleryPrev" class="galButton"> Anterior </h3> -->
                     </div>
                     <!-- NEXT BUTTON -->
-                    <div class="col-6 order-3 col-md-2 order-md-3 text-md-left animated fadeInLeft delay-1s">
+                    <div class="col-6 order-3 col-md-2 order-md-3 text-md-left animated fadeInLeft delay-1s bg-primary">
                         <i id="galleryNext" class="fa fa-angle-right fa-4x galButton px-4"></i>
                     </div>
 
