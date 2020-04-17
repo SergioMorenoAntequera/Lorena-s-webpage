@@ -77,8 +77,7 @@ html, body{
 #gallerySession::-webkit-scrollbar-thumb {
     background-color: white;
     outline: 1px solid rgb(179, 186, 194);
-}
-    
+} 
 #gallerySession #session {
     position: relative;
     background-color: #68040d;
