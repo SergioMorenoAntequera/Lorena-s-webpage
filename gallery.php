@@ -97,26 +97,26 @@
 
     
     <div id="galleryMain" class="container-fluid">
-        <header class="header d-none d-md-flex row align-items-center">
+        <header class="header d-none d-lg-flex row align-items-center">
             <div class="col-12 text-center animated fadeIn">
                 <h1> Galería </h1>
             </div>
         </header>
-        <div class="body row text-center mt-5 mt-md-0">
-            <div class="col-12 h-100  mt-5 mt-md-0">
+        <div class="body row text-center mt-5 mt-lg-0">
+            <div class="col-12 h-100 mt-2 mt-lg-0">
                 <div class="row align-items-center justify-content-center h-100">
                     <!-- IMAGES -->
-                    <div class="imgsGallery col-12 order-1 col-md-5 order-md-2">
+                    <div class="imgsGallery col-12 order-1 col-lg-5 order-lg-2">
                         
                     </div>
 
                     <!-- PREV BUTTON -->
-                    <div class="col-6 order-2 col-md-2 order-md-1 text-md-right animated fadeInRight delay-1s">
+                    <div class="col-6 order-2 col-lg-2 order-lg-1 text-lg-right animated fadeInRight delay-1s">
                         <i id="galleryPrev" class="fa fa-angle-left fa-4x galButton px-4"></i>    
                         <!-- <h3 id="galleryPrev" class="galButton"> Anterior </h3> -->
                     </div>
                     <!-- NEXT BUTTON -->
-                    <div class="col-6 order-3 col-md-2 order-md-3 text-md-left animated fadeInLeft delay-1s">
+                    <div class="col-6 order-3 col-lg-2 order-lg-3 text-lg-left animated fadeInLeft delay-1s">
                         <i id="galleryNext" class="fa fa-angle-right fa-4x galButton px-4"></i>
                     </div>
 
