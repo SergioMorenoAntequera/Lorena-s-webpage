@@ -128,6 +128,10 @@ $(document).ready(function(e){
         }
     });
     
+    $(".see-more").on("click", function(){
+        console.log("PRA");
+        $(".imgGallery").click();
+    });
     
 
     // HIDE THE SESSION

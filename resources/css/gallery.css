@@ -54,6 +54,10 @@ html, body{
     height: 100%;
     max-width: 100%;
     cursor: pointer;
+    transition: 1s;
+}
+#galleryMain .body .img-container img:hover {
+    filter: brightness(110%); 
 }
 @media (min-width: 768px) {
     .grid-item { width: 33.333%;}
@@ -61,6 +65,15 @@ html, body{
 @media (max-width: 768px) {
     .grid-item { width: 50%;}
 }
+.see-more{
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    left: 50%;
+    top: -40%;
+    transform: translate(-50%);
+}
+
 .galButton {
     z-index: 2;
     cursor: pointer;

@@ -108,8 +108,9 @@
                 <div class="row align-items-center justify-content-center h-100">
                     <!-- IMAGES -->
                     <div class="imgsGallery col-12 order-1 col-lg-5 order-lg-2">
-                        
                     </div>
+
+                    
 
                     <!-- PREV BUTTON -->
                     <div class="col-6 order-2 col-lg-2 order-lg-1 text-lg-right animated fadeInRight delay-1s">
@@ -123,6 +124,9 @@
 
                     <!-- SESSION NAME -->
                     <div class="titleCont col-12 order-4 animated fadeInDown delay-1s">
+                    <div class="see-more">
+                        <i class="fa fa-plus fa-2x"></i>
+                    </div>
                         <h2 class="title"> Nombre de sesión </h2>
                     </div>
                 </div>
@@ -153,10 +157,10 @@
         </div>
     </div>
     
+    
     <a href="#gallerySession">
         <div id="linkSession"></div>
     </a>
-
     <div class="goUp" id="goUpGallery">
         <i class="fa fa-angle-up fa-4x"></i>
     </div>
