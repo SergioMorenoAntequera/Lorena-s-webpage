@@ -125,7 +125,7 @@
                     <!-- SESSION NAME -->
                     <div class="titleCont col-12 order-4 animated fadeInDown delay-1s">
                     <div class="see-more">
-                        <i class="fa fa-plus fa-2x"></i>
+                        <i class="fa fa-plus fa-1x"></i>
                     </div>
                         <h2 class="title"> Nombre de sesión </h2>
                     </div>
