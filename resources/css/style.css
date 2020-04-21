@@ -207,6 +207,7 @@ a:hover{ text-decoration: none;}
 .goUp{
     display: none;
     position: fixed;
+    z-index: 1;
     height: 40px;
     width: 40px;
     right: 20px;
